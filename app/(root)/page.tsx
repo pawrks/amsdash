@@ -1,15 +1,20 @@
-"use client";
+'use client'
 
-import { Modal } from "@/components/ui/modal";
+import { useEffect } from 'react'
+
+import { useClientModal } from '@/hooks/use-client-modal'
 
 const SetupPage = () => {
-  return (
-    <div className="p-4">
-      <Modal title="Test" description="Test Desc" isOpen onClose={() => {}}>
-        Children
-      </Modal>
-    </div>
-  );
-};
+  const onOpen = useClientModal(state => state.onOpen)
+  const isOpen = useClientModal(state => state.isOpen)
 
-export default SetupPage;
+  useEffect(() => {
+    if (!isOpen) {
+      onOpen()
+    }
+  }, [isOpen, onOpen])
+
+  return <div className="p-4">Root Page</div>
+}
+
+export default SetupPage
