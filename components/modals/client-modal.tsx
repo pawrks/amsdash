@@ -1,5 +1,7 @@
 'use client'
 
+import * as z from 'zod'
+
 import { useClientModal } from '@/hooks/use-client-modal'
 import { Modal } from '@/components/ui/modal'
 
@@ -11,7 +13,7 @@ export const ClientModal = () => {
   return (
     <Modal
       title="Create a new Client"
-      description="Add a new client to manage products and categories"
+      description="Add a new client to get started!"
       isOpen={ClientModal.isOpen}
       onClose={ClientModal.onClose}
     >
