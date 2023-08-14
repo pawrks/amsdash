@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useParams } from 'next/navigation'
 
 import { useClientModal } from '@/hooks/use-client-modal'
 
@@ -14,7 +15,7 @@ const SetupPage = () => {
     }
   }, [isOpen, onOpen])
 
-  return <div className="p-4">Root Page</div>
+  return null
 }
 
 export default SetupPage
