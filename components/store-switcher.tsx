@@ -38,7 +38,7 @@ export default function StoreSwitcher({
   className,
   items = []
 }: StoreSwitcherProps) {
-  const ClientModal = useClientModal()
+  const clientModal = useClientModal()
   const params = useParams()
   const router = useRouter()
 
@@ -70,7 +70,7 @@ export default function StoreSwitcher({
           className={cn('w-[200px] justify-between', className)}
         >
           <StoreIcon className="mr-2 h-4 w-4" />
-          TODO: Current Client
+          {currentClient?.label}
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -106,7 +106,7 @@ export default function StoreSwitcher({
               <CommandItem
                 onSelect={() => {
                   setOpen(false)
-                  ClientModal.onOpen()
+                  clientModal.onOpen()
                 }}
               >
                 <PlusCircle className="mr-2 h-5 w-5" />
