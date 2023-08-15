@@ -47,7 +47,7 @@ export const ClientModal = () => {
 
       const response = await axios.post('/api/clients', values)
 
-      toast.success('Client created')
+      window.location.assign(`/${response.data.id}`)
     } catch (error) {
       toast.error('Something went wrong')
     } finally {
