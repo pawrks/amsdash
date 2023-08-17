@@ -13,7 +13,6 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
   <img src="./images/Node.js_logo.svg" alt="Node.js" width="60" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/docker-official.svg" alt="Docker" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
-  <p style="font: 35px helvetica neue,open sans,sans-serif; font-weight: 100; color: white; margin: 0;">Express</p>
 </div>
 
 - **Next.js, & TypeScript**: Statically typed with server-side rendering for efficient and powerful development
