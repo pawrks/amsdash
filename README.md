@@ -1,10 +1,11 @@
 # AMSdash: Next-Generation Asset Management System
 
-AMSdash is built to redefine asset management in the colocation data center and cloud hosting space. By leveraging cutting-edge technology and adhering to rigorous compliance standards, AMSdash aims to deliver efficiency, innovation, and scalability for today's dynamic business environment. With a focus on adaptability and a commitment to excellence, AMSdash is designed to seamlessly integrate with existing systems while providing a robust platform for future growth.
+AMSdash is built to redefine asset management in cloud hosting and the colocation data center. By leveraging cutting-edge technology and adhering to rigorous compliance standards, AMSdash aims to deliver efficiency, innovation, and scalability for today's dynamic business environment. With a focus on adaptability and a commitment to excellence, AMSdash is designed to seamlessly integrate with existing systems while providing a robust platform for future growth.
 
-## Technology Stack
+## Core Stack
 
-- **Next.js & TypeScript**: Server-side rendering with typed language support for efficient development
+- **Next.js, & TypeScript**: Server-side rendering with typed language support for efficient development
+- **Express**: Node.js back-end to communicate with external APIs
 - **shadcn/ui**: Modern and responsive, React-based, modular UI
 - **SQL Database**: Prisma and MySQL
 - **Docker Compose**: Container orchestration for streamlined deployment and management
@@ -72,4 +73,4 @@ AMSdash is built to redefine asset management in the colocation data center and 
   - 3D visualization and AR support
   - Interactive asset management interface
 
-The plan is for this project to be continually updated, any suggestions for improvements are more than welcome!
+Any suggestions for improvements are more than welcome!
