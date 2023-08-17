@@ -11,7 +11,7 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
   <img src="./images/mysql-official.svg" alt="MySQL" width="70" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/light-prisma-svgrepo-com-navy.svg" alt="Prisma.io" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/Node.js_logo.svg" alt="Node.js" width="60" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
-  <img src="./images/expressjs-ar21.svg" alt="Express" width="70" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
+    <p style="display: block; font: 25px helvetica neue,open sans,sans-serif; font-weight: 100; color: white;">Express</p>
   <img src="./images/docker-official.svg" alt="Docker" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
 </div>
