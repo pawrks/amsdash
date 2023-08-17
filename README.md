@@ -1,6 +1,6 @@
 # AMSdash: Next-Generation Asset Management System
 
-AMSdash is built to redefine asset management in cloud hosting and the colocation data center. By leveraging cutting-edge technology and adhering to rigorous compliance standards, AMSdash aims to deliver efficiency, innovation, and scalability for today's dynamic business environment. With a focus on adaptability and a commitment to excellence, AMSdash is designed to seamlessly integrate with existing systems while providing a robust platform for future growth.
+AMSdash is built to redefine asset management in the physical and virtual data center. By leveraging cutting-edge technology and adhering to rigorous compliance standards, AMSdash aims to deliver efficiency, innovation, and scalability for today's dynamic business environment. With a focus on adaptability and a commitment to excellence, AMSdash is designed to seamlessly integrate with existing systems while providing a robust platform for future growth.
 
 ![Dashboard](./images/AMSdash.jpg)
 
