@@ -15,7 +15,7 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
   <img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
 </div>
 
-    <br/>
+<br/>
 
 - **Next.js, & TypeScript**: Statically typed with server-side rendering for efficient and powerful development
 - **shadcn/ui**: Modern and responsive, React-based, modular UI
