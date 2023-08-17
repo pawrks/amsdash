@@ -21,7 +21,7 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
 - **shadcn/ui**: Modern and responsive, React-based, modular UI
 - **SQL Database**: Prisma and MySQL
 - **Express**: Node.js back-end to communicate with external APIs
-- **Docker Compose**: Container orchestration for streamlined deployment and management
+- **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
 
 ### Security & Compliance
 
