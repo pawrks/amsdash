@@ -4,7 +4,7 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
 
 ![Dashboard](./images/AMSdash.jpg)
 
----
+<br/>
 
 ![LoginModal](./images/AMSdashModal.jpg)
 
