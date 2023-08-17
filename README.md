@@ -4,11 +4,11 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
 
 ## Core Stack
 
-- **Next.js, & TypeScript**: ![Next.js](./images/Typescript_logo_2020.svg)![TypeScript](./images/React-icon.svg) Statically typed with server-side rendering for efficient and powerful development
-- **shadcn/ui**: ![shadcn/ui](./images/shadcnui.png) Modern and responsive, React-based, modular UI
-- **SQL Database**: ![MySQL](./images/mysql-official.svg)![Prisma.io](./images/light-prisma-svgrepo-com-navy.svg) MySQL & Prisma
-- **Express**: ![Node.js](./images/Nodejs_logo.svg) ![Express](./images/expressjs-ar21.svg) Node.js back-end to communicate with external APIs
-- **Docker & Ansible**: ![Docker](./images/docker-official.svg) ![Ansible](./images/ansible-svgrepo-com) Container orchestration for streamlined deployment and management
+- **Next.js, & TypeScript**: <img src="./images/Typescript_logo_2020.svg" alt="Next.js" width="50" /><img src="./images/React-icon.svg" alt="TypeScript" width="50" /> Statically typed with server-side rendering for efficient and powerful development
+- **shadcn/ui**: <img src="./images/shadcnui.png" alt="shadcn/ui" width="50" /> Modern and responsive, React-based, modular UI
+- **SQL Database**: <img src="./images/mysql-official.svg" alt="MySQL" width="50" /><img src="./images/light-prisma-svgrepo-com-navy.svg" alt="Prisma.io" width="50" /> MySQL & Prisma
+- **Express**: <img src="./images/Node.js_logo.svg" alt="Node.js" width="50" /><img src="./images/expressjs-ar21.svg" alt="Express" width="50" /> Node.js back-end to communicate with external APIs
+- **Docker & Ansible**: <img src="./images/docker-official.svg" alt="Docker" width="50" /><img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="50" /> Container orchestration for streamlined deployment and management
 
 ### Security & Compliance
 
