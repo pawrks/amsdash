@@ -5,7 +5,6 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
 ## Core Stack
 
 <div style="display: flex; flex-wrap: nowrap; align-items: center; background-color: #f0f0f0;">
-    <br/>
   <img src="./images/Typescript_logo_2020.svg" alt="Next.js" width="35" style="padding: 15px; box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/React-icon.svg" alt="TypeScript" width="35" style="padding: 15px; box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/shadcnui.png" alt="shadcn/ui" width="95" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
@@ -14,6 +13,7 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
   <img src="./images/Node.js_logo.svg" alt="Node.js" width="60" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/docker-official.svg" alt="Docker" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="50" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
+    <br/>
 </div>
 
 - **Next.js, & TypeScript**: Statically typed with server-side rendering for efficient and powerful development
