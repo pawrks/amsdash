@@ -2,12 +2,15 @@
 
 AMSdash is built to redefine asset management in cloud hosting and the colocation data center. By leveraging cutting-edge technology and adhering to rigorous compliance standards, AMSdash aims to deliver efficiency, innovation, and scalability for today's dynamic business environment. With a focus on adaptability and a commitment to excellence, AMSdash is designed to seamlessly integrate with existing systems while providing a robust platform for future growth.
 
+![Dashboard](./images/AMSdash.jpg)
+![LoginModal](./images/AMSdashModal.jpg)
+
 ## Core Stack
 
 <div style="display: flex; flex-wrap: nowrap; align-items: center; background-color: #f0f0f0;">
   <img src="./images/nextjs-svgrepo-com.svg" alt="Next.js" width="80" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/Typescript_logo_2020.svg" alt="TypeScript.js" width="65" style="padding: 15px; box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
-  <img src="./images/React-icon.svg" alt="TypeScript" width="65" style="padding: 15px; box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
+  <img src="./images/React-icon.svg" alt="React.js" width="65" style="padding: 15px; box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/shadcnui.png" alt="shadcn/ui" width="125" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/mysql-official.svg" alt="MySQL" width="100" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
   <img src="./images/light-prisma-svgrepo-com-navy.svg" alt="Prisma.io" width="80" style="box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);" />
