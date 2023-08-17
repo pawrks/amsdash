@@ -4,11 +4,11 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
 
 ## Core Stack
 
-- **Next.js, & TypeScript**: Server-side rendering with typed language support for efficient development
-- **Express**: Node.js back-end to communicate with external APIs
-- **shadcn/ui**: Modern and responsive, React-based, modular UI
-- **SQL Database**: Prisma and MySQL
-- **Docker Compose**: Container orchestration for streamlined deployment and management
+- **Next.js, & TypeScript**: ![Next.js](./images/Typescript_logo_2020.svg)![TypeScript](./images/React-icon.svg) Statically typed with server-side rendering for efficient and powerful development
+- **shadcn/ui**: ![shadcn/ui](./images/shadcnui.png) Modern and responsive, React-based, modular UI
+- **SQL Database**: ![MySQL](./images/mysql-official.svg)![Prisma.io](./images/light-prisma-svgrepo-com-navy.svg) MySQL & Prisma
+- **Express**: ![Node.js](./images/Nodejs_logo.svg) ![Express](./images/expressjs-ar21.svg) Node.js back-end to communicate with external APIs
+- **Docker & Ansible**: ![Docker](./images/docker-official.svg) ![Ansible](./images/ansible-svgrepo-com) Container orchestration for streamlined deployment and management
 
 ### Security & Compliance
 

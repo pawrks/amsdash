@@ -1,10 +1,12 @@
 'use client'
 
 import * as z from 'zod'
+import axios from 'axios'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useParams, useRouter } from 'next/navigation'
 import { Client } from '@prisma/client'
 import { Trash } from 'lucide-react'
 
@@ -34,18 +36,25 @@ const formSchema = z.object({
 type SettingsFormValues = z.infer<typeof formSchema>
 
 export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
+  const parmas = useParams()
+  const router = useRouter()
+
+  const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
+
   const form = useForm<SettingsFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData
   })
 
-  const [open, setOpen] = useState(false)
-  const [loading, setLoading] = useState(false)
-
   const onSubmit = async (data: SettingsFormValues) => {
     try {
+      setLoading(true)
+      await axios.patch(`/api/clients/${params.clientId}`)
     } catch (error) {
       toast.error('Something went wrong')
+    } finally {
+      setLoading(false)
     }
   }
   return (
