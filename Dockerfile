@@ -1,3 +1,4 @@
+# Lets Docker know what version of Node.js to use 
 FROM node:18
 
 # Create app directory
@@ -8,12 +9,15 @@ WORKDIR /app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-# If you are building your code for production
+# When building for production use command directly below instead of npm install
 # RUN npm ci --omit=dev
+RUN npm install
 
 # Bundle app source
 COPY . .
 
+# Expose on port 8080
 EXPOSE 8080
+
+# When building for production remove "dev"
 CMD [ "npm", "run", "dev" ]

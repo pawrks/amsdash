@@ -1,60 +1,75 @@
-# CMSdash
+# AMSdash: Next-Generation Asset Management System
 
-This project is in the process of building a content/product management system.
-There are plans to integrate many different tools to optimize efficiency and productivity. There
-will be more information available after more functionality has been built in.
+AMSdash is built to redefine asset management in the colocation data center and cloud hosting space. By leveraging cutting-edge technology and adhering to rigorous compliance standards, AMSdash aims to deliver efficiency, innovation, and scalability for today's dynamic business environment. With a focus on adaptability and a commitment to excellence, AMSdash is designed to seamlessly integrate with existing systems while providing a robust platform for future growth.
 
-## Stack
+## Technology Stack
 
-Current plans are to do a serverless build with microservices.
+- **Next.js & TypeScript**: Server-side rendering with typed language support for efficient development
+- **shadcn/ui**: Modern and responsive, React-based, modular UI
+- **SQL Database**: Prisma and MySQL
+- **Docker Compose**: Container orchestration for streamlined deployment and management
 
-- Next.js with app router
-- shadcn/ui
-- SQL database (MySQL with PlanetScale)
+### Security & Compliance
+
+- Compliance with legal and regulatory frameworks
+- Robust security architecture, following industry best practices
 
 ## Outline
 
-A general plan of features that will be included.
+### Phase 1: Core Functionality
 
-### Phase 1
+#### User Management & Authentication
 
-##### User Management & Authentication
+- Role-based access control
+- OAuth integration for third-party authentication
 
-- Admin users
-- Regular users
-- Add, edit, and remove users
-- Login via other accounts (e.g. Google, LinkedIn, etc.)
-- Login via AD (probably need to push to later phase but is possible)
+#### Access List
 
-##### Content/Product Management Dashboard
+- Security access management with detailed logging
+- Door access control API integration
+- Compliance alignment with regulations
 
-- Add, edit, remove, and archive _'clients'_
-- Add, edit, remove, and archive content/products from inventory system
-  - Rack space
-  - Network
-  - Power
-  - VMs
+#### Asset Management Dashboard
 
-##### Access List
+- Real-time inventory management
+- Data analytics integration for actionable insights
 
-- Fix user managment issues with logging in
-- Connect to ticketing system
-  - Render client & contact info correctly
-  - Render billing status
-- Access List logging and recent visitors
-- Check-in & check-out
-- Search
+### Phase 2: Advanced Features
 
-### Phase 2
+#### AI-Driven Monitoring & Analytics
 
-##### Monitoring & Analytics
+- Live monitoring of power, network, and systems
+- Predictive analytics powered by machine learning library TensorFlow
 
-The managment dashboard will have additional functionality regarding content/product
-metrics.
+#### Ticketing System Integration
 
-- Live feeds of power circuits & environmental sensors
-- Data analysis for managing content/products
+- Seamless integration with in-house or third-party ticketing systems
+- Automated ticket creation, tracking, and resolution
 
-### Phase 3 & Beyond
+#### Self-Service Automation & Orchestration
 
-Who knows??? Let's Go!!!
+- Intelligent automation for resource scaling
+- API-driven management capabilities
+
+### Phase 3: Premium Enhancements & Customer Interaction
+
+#### Customer Purchase Platform
+
+- End-to-end eCommerce solution
+- Secure payment processing with Stripe integration
+
+#### Sustainability & Energy Efficiency Reporting
+
+- Energy consumption monitoring
+- Recommendations for eco-friendly operations
+
+### Phase 4 & Beyond: Future Opportunities
+
+- Replacement for cloud orchestration solutions
+- User Engagement & Personalized Experience
+- Customizable White-Label Solutions
+- Integrated Virtual Network Operations Center (NOC)
+  - 3D visualization and AR support
+  - Interactive asset management interface
+
+The plan is for this project to be continually updated, any suggestions for improvements are more than welcome!
