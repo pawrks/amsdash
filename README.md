@@ -5,15 +5,15 @@ AMSdash is built to redefine asset management in cloud hosting and the colocatio
 ## Core Stack
 
 <div style="display: flex; flex-wrap: nowrap;">
-  <img src="./images/Typescript_logo_2020.svg" alt="Next.js" width="60" />
-  <img src="./images/React-icon.svg" alt="TypeScript" width="60" />
-  <img src="./images/shadcnui.png" alt="shadcn/ui" width="60" />
-  <img src="./images/mysql-official.svg" alt="MySQL" width="60" />
-  <img src="./images/light-prisma-svgrepo-com-navy.svg" alt="Prisma.io" width="60" />
+  <img src="./images/Typescript_logo_2020.svg" alt="Next.js" width="50" />
+  <img src="./images/React-icon.svg" alt="TypeScript" width="50" />
+  <img src="./images/shadcnui.png" alt="shadcn/ui" width="70" />
+  <img src="./images/mysql-official.svg" alt="MySQL" width="70" />
+  <img src="./images/light-prisma-svgrepo-com-navy.svg" alt="Prisma.io" width="50" />
   <img src="./images/Node.js_logo.svg" alt="Node.js" width="60" />
-  <img src="./images/expressjs-ar21.svg" alt="Express" width="60" />
-  <img src="./images/docker-official.svg" alt="Docker" width="60" />
-  <img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="60" />
+  <img src="./images/expressjs-ar21.svg" alt="Express" width="70" />
+  <img src="./images/docker-official.svg" alt="Docker" width="50" />
+  <img src="./images/ansible-svgrepo-com.svg" alt="Ansible" width="50" />
 </div>
 
 - **Next.js, & TypeScript**: Statically typed with server-side rendering for efficient and powerful development
