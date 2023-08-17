@@ -19,5 +19,7 @@ COPY . .
 # Expose on port 8080
 EXPOSE 8080
 
-# When building for production remove "dev"
+# When building for production use two commands directly below insead of npm run dev
+# CMD [ "npm", "run", "build" ]
+# CMD [ "npm", "run", "start" ]
 CMD [ "npm", "run", "dev" ]
