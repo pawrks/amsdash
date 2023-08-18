@@ -30,13 +30,6 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 - **Express**: Node.js back-end to communicate with external APIs
 - **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
 
-## Outline
-
-### Security & Compliance
-
-- Compliance with legal and regulatory frameworks
-- Robust security architecture, following industry best practices
-
 ## Outline & Roadmap
 
 Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional year or more.
