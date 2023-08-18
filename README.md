@@ -31,8 +31,11 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 - **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
 
 <<<<<<< HEAD
+
 ## Outline
+
 =======
+
 ### Security & Compliance
 
 - Compliance with legal and regulatory frameworks
@@ -41,7 +44,8 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 ## Outline & Roadmap
 
 Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional year or more.
->>>>>>> 303cea1 (added homepage link, delete client functionality, & API endpoint component)
+
+> > > > > > > 303cea1 (added homepage link, delete client functionality, & API endpoint component)
 
 ### Phase 1: Core Functionality
 
@@ -71,7 +75,8 @@ Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional
 #### AI-Driven Monitoring & Analytics
 
 - Live monitoring of power, network, and systems
-- Predictive analytics powered by machine learning library TensorFlow ![TensorFlow](./images/tensorflow-ar21.svg)
+- Predictive analytics powered by machine learning library TensorFlow
+  ![TensorFlow](./images/tensorflow-ar21.svg)
 
 #### Ticketing System Integration
 
