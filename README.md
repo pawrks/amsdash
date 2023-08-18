@@ -45,8 +45,6 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional year or more.
 
-> > > > > > > 303cea1 (added homepage link, delete client functionality, & API endpoint component)
-
 ### Phase 1: Core Functionality
 
 #### Security & Compliance
