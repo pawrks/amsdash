@@ -96,5 +96,6 @@ Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional
 - Integrated Virtual Network Operations Center (NOC)
   - 3D visualization and AR support
   - Interactive asset management interface
+- Automated incoming package scanning
 
 Any suggestions for improvements are more than welcome!
