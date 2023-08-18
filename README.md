@@ -76,6 +76,7 @@ Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional
 
 - Live monitoring of power, network, and systems
 - Predictive analytics powered by machine learning library TensorFlow
+
   ![TensorFlow](./images/tensorflow-ar21.svg)
 
 #### Ticketing System Integration
