@@ -30,7 +30,18 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 - **Express**: Node.js back-end to communicate with external APIs
 - **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
 
+<<<<<<< HEAD
 ## Outline
+=======
+### Security & Compliance
+
+- Compliance with legal and regulatory frameworks
+- Robust security architecture, following industry best practices
+
+## Outline & Roadmap
+
+Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional year or more.
+>>>>>>> 303cea1 (added homepage link, delete client functionality, & API endpoint component)
 
 ### Phase 1: Core Functionality
 
@@ -60,7 +71,7 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 #### AI-Driven Monitoring & Analytics
 
 - Live monitoring of power, network, and systems
-- Predictive analytics powered by machine learning library TensorFlow
+- Predictive analytics powered by machine learning library TensorFlow ![TensorFlow](./images/tensorflow-ar21.svg)
 
 #### Ticketing System Integration
 
