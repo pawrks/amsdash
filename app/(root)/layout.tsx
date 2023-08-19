@@ -13,7 +13,7 @@ export default async function SetupLayout({
 
   // If no user redirect to home page
   if (!userId) {
-    redirect('/')
+    redirect('/sign-in')
   }
 
   // Find client related to user

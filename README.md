@@ -28,11 +28,10 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 - **shadcn/ui**: Modern and responsive, React-based, modular UI
 - **SQL Database**: Prisma and MySQL
 - **Express**: Node.js back-end to communicate with external APIs
-- **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
+- **Docker Compose & Ansible**:Container orchestration for streamlined deployment and management
+- **Github Actions**: Automated developer workflows
 
-## Outline & Roadmap
-
-Phases 1-3 are planned to be about 6 months each, phase 4 would be an additional year or more.
+## Outline
 
 ### Phase 1: Core Functionality
 

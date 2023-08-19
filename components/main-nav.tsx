@@ -19,6 +19,11 @@ export function MainNav({
       active: pathname === `/${params.clientId}`
     },
     {
+      href: `/${params.clientId}/assets`,
+      label: 'Assets',
+      active: pathname === `/${params.clientId}/assets`
+    },
+    {
       href: `/${params.clientId}/settings`,
       label: 'Settings',
       active: pathname === `/${params.clientId}/settings`

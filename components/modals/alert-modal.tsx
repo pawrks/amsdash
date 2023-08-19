@@ -28,7 +28,7 @@ export const AlertModal: React.FC<AlertModalProps> = ({
   return (
     <Modal
       title="Are you sure?"
-      description="Deleting a client can not be undone."
+      description="Warning! Deleting a client can not be undone!"
       isOpen={isOpen}
       onClose={onClose}
     >
