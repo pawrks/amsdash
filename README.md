@@ -4,10 +4,6 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 ![Dashboard](./images/AMSdash.jpg)
 
-<br/>
-
-![LoginModal](./images/AMSdashModal.jpg)
-
 ## Core Stack
 
 <div style="display: flex; flex-wrap: nowrap; align-items: center; background-color: #f0f0f0;">
