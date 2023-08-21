@@ -14,7 +14,6 @@ import { Heading } from '@/components/ui/heading'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Input } from '@/components/ui/input'
-import { ApiAlert } from '@/components/ui/api-alert'
 import {
   Form,
   FormControl,
@@ -24,7 +23,7 @@ import {
   FormMessage
 } from '@/components/ui/form'
 import { AlertModal } from '@/components/modals/alert-modal'
-import { useOrigin } from '@/hooks/use-origin'
+import ImageUpload from '@/components/ui/image-upload'
 
 const formSchema = z.object({
   label: z.string().min(1, {
@@ -44,10 +43,16 @@ interface AssetFormProps {
 export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
   const params = useParams()
   const router = useRouter()
-  const origin = useOrigin()
 
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  const title = initialData ? 'Edit Asset' : 'Create Asset'
+  const description = initialData
+    ? 'Edit an Asset'
+    : 'Create a new asset for a client'
+  const toastMessage = initialData ? 'Asset updated' : 'Asset created'
+  const action = initialData ? 'Save changes' : 'Create'
 
   const form = useForm<AssetFormValues>({
     resolver: zodResolver(formSchema),
@@ -62,7 +67,7 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
       setLoading(true)
       await axios.patch(`/api/clients/${params.clientId}`, data)
       router.refresh()
-      toast.success('Client updated')
+      toast.success('Asset updated')
     } catch (error) {
       toast.error('Something went wrong')
     } finally {
@@ -76,7 +81,7 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
       await axios.delete(`/api/clients/${params.clientId}`)
       router.refresh()
       router.push('/')
-      toast.success('Client deleted')
+      toast.success('Asset deleted')
     } catch (error) {
       toast.error('Make sure all assets and products are deleted first.')
     } finally {
@@ -96,15 +101,17 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
         loading={loading}
       />
       <div className="flex items-center justify-between">
-        <Heading title="Settings" description="Manage client preferences." />
-        <Button
-          disabled={loading}
-          variant="destructive"
-          size="sm"
-          onClick={() => setOpen(true)}
-        >
-          <Trash className="h-4 w-4" />
-        </Button>
+        <Heading title={title} description={description} />
+        {initialData && (
+          <Button
+            disabled={loading}
+            variant="destructive"
+            size="sm"
+            onClick={() => setOpen(true)}
+          >
+            <Trash className="h-4 w-4" />
+          </Button>
+        )}
       </div>
       <Separator />
       <Form {...form}>
@@ -112,17 +119,35 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 w-full"
         >
+          <FormField
+            control={form.control}
+            name="imageUrl"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Background Image</FormLabel>
+                <FormControl>
+                  <ImageUpload
+                    value={field.value ? [field.value] : []}
+                    disabled={loading}
+                    onChange={url => field.onChange(url)}
+                    onRemove={() => field.onChange('')}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <div className="grid grid-cols-3 gap-8">
             <FormField
               control={form.control}
-              name="name"
+              name="label"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Label</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Client name"
+                      placeholder="Asset label"
                       {...field}
                     />
                   </FormControl>
@@ -132,16 +157,11 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
             />
           </div>
           <Button disabled={loading} className="ml-auto" type="submit">
-            Save changes
+            {action}
           </Button>
         </form>
       </Form>
       <Separator />
-      <ApiAlert
-        title="NEXT_PUBLIC_API_URL"
-        description={`${origin}/api/${params.clientId}`}
-        variant="public"
-      />
     </>
   )
 }
