@@ -24,10 +24,10 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 <br/>
 
-- **Next.js, & TypeScript**: Statically typed with server-side rendering for efficient and powerful development
+- **Next.js, & TypeScript**: Server-side rendering with statically typed language support for powerful and efficient development
 - **shadcn/ui**: Modern and responsive, React-based, modular UI
-- **SQL Database**: Prisma and MySQL
-- **Express**: Node.js back-end to communicate with external APIs
+- **SQL Database**: MySQL and Prisma
+- **Express**: Node.js server framework to communicate with external APIs
 - **Docker Compose & Ansible**:Container orchestration for streamlined deployment and management
 - **Github Actions**: Automated developer workflows
 
