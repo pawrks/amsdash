@@ -16,7 +16,7 @@ export const AssetClient = () => {
       <div className="flex items-center justify-between">
         <Heading
           title="Assets (0)"
-          description="Manage assets and their metadata."
+          description="Manage assets for individual clients."
         />
         <Button onClick={() => router.push(`/${params.clientId}/assets/new`)}>
           <Plus className="mr-2 h-4 w-4" />

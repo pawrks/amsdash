@@ -24,6 +24,26 @@ export function MainNav({
       active: pathname === `/${params.clientId}/assets`
     },
     {
+      href: `/${params.clientId}/products`,
+      label: 'Products',
+      active: pathname === `/${params.clientId}/products`
+    },
+    {
+      href: `/${params.clientId}/insights`,
+      label: 'Insights',
+      active: pathname === `/${params.clientId}/insights`
+    },
+    {
+      href: `/${params.clientId}/support`,
+      label: 'Support',
+      active: pathname === `/${params.clientId}/support`
+    },
+    {
+      href: `/${params.clientId}/docs`,
+      label: 'Docs',
+      active: pathname === `/${params.clientId}/docs`
+    },
+    {
       href: `/${params.clientId}/settings`,
       label: 'Settings',
       active: pathname === `/${params.clientId}/settings`
