@@ -65,9 +65,16 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
   const onSubmit = async (data: AssetFormValues) => {
     try {
       setLoading(true)
-      await axios.patch(`/api/clients/${params.clientId}`, data)
+      if (initialData) {
+        await axios.patch(
+          `/api/${params.clientId}/assets/${params.assetId}`,
+          data
+        )
+      } else {
+        await axios.post(`/api/${params.clientId}/assets`, data)
+      }
       router.refresh()
-      toast.success('Asset updated')
+      toast.success(toastMessage)
     } catch (error) {
       toast.error('Something went wrong')
     } finally {
@@ -78,12 +85,12 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(`/api/clients/${params.clientId}`)
+      await axios.delete(`/api/${params.clientId}/assets/${params.assetId}`)
       router.refresh()
       router.push('/')
       toast.success('Asset deleted')
     } catch (error) {
-      toast.error('Make sure all assets and products are deleted first.')
+      toast.error('Make sure all connections to this asset are deleted first.')
     } finally {
       setLoading(false)
       setOpen(false)
