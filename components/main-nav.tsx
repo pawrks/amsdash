@@ -29,14 +29,19 @@ export function MainNav({
       active: pathname === `/${params.clientId}/products`
     },
     {
+      href: `/${params.clientId}/support`,
+      label: 'Support',
+      active: pathname === `/${params.clientId}/support`
+    },
+    {
       href: `/${params.clientId}/insights`,
       label: 'Insights',
       active: pathname === `/${params.clientId}/insights`
     },
     {
-      href: `/${params.clientId}/support`,
-      label: 'Support',
-      active: pathname === `/${params.clientId}/support`
+      href: `/${params.clientId}/sales`,
+      label: 'Sales',
+      active: pathname === `/${params.clientId}/sales`
     },
     {
       href: `/${params.clientId}/docs`,

@@ -6,8 +6,13 @@ import { Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Heading } from '@/components/ui/heading'
 import { Separator } from '@/components/ui/separator'
+import { AssetColumn } from './columns'
 
-export const AssetClient = () => {
+interface AssetClientProps {
+  data: AssetColumn[]
+}
+
+export const AssetClient: React.FC<AssetClientProps> = ({ data }) => {
   const router = useRouter()
   const params = useParams()
 
@@ -15,7 +20,7 @@ export const AssetClient = () => {
     <>
       <div className="flex items-center justify-between">
         <Heading
-          title="Assets (0)"
+          title={`Assets (${data.length})`}
           description="Manage assets for individual clients."
         />
         <Button onClick={() => router.push(`/${params.clientId}/assets/new`)}>
