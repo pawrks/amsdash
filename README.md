@@ -40,12 +40,15 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 - Role-based access control
 - OAuth integration for third-party authentication
+- View current users logged in to amsdash
 
 #### Access List
 
 - Security access management with detailed logging
 - Door access control API integration
 - Compliance alignment with regulations
+- Automatic incoming package scanning
+- Expedited client check-in
 
 #### Asset Management Dashboard
 
@@ -91,6 +94,5 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 - Integrated Virtual Network Operations Center (NOC)
   - 3D visualization and AR support
   - Interactive asset management interface
-- Automated incoming package scanning
 
 Any suggestions for improvements are more than welcome!
