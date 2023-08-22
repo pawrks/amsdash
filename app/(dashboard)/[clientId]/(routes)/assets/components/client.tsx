@@ -6,7 +6,9 @@ import { Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Heading } from '@/components/ui/heading'
 import { Separator } from '@/components/ui/separator'
-import { AssetColumn } from './columns'
+import { DataTable } from '@/components/ui/data-table'
+
+import { AssetColumn, columns } from './columns'
 
 interface AssetClientProps {
   data: AssetColumn[]
@@ -29,6 +31,7 @@ export const AssetClient: React.FC<AssetClientProps> = ({ data }) => {
         </Button>
       </div>
       <Separator />
+      <DataTable columns={columns} data={data} />
     </>
   )
 }
