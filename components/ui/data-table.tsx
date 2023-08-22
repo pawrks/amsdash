@@ -29,11 +29,13 @@ import { DataTablePagination } from './pagination'
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  searchKey: string
 }
 
 export function DataTable<TData, TValue>({
   columns,
-  data
+  data,
+  searchKey
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
@@ -57,10 +59,10 @@ export function DataTable<TData, TValue>({
     <div>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter assets"
-          value={(table.getColumn('label')?.getFilterValue() as string) ?? ''}
+          placeholder="Search"
+          value={(table.getColumn(searchKey)?.getFilterValue() as string) ?? ''}
           onChange={e =>
-            table.getColumn('label')?.setFilterValue(e.target.value)
+            table.getColumn(searchKey)?.setFilterValue(e.target.value)
           }
           className="max-w-sm"
         />

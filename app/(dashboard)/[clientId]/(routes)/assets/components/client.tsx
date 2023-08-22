@@ -31,7 +31,7 @@ export const AssetClient: React.FC<AssetClientProps> = ({ data }) => {
         </Button>
       </div>
       <Separator />
-      <DataTable columns={columns} data={data} />
+      <DataTable searchKey="label" columns={columns} data={data} />
     </>
   )
 }
