@@ -74,6 +74,7 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
         await axios.post(`/api/${params.clientId}/assets`, data)
       }
       router.refresh()
+      router.push(`/${params.clientId}/assets`)
       toast.success(toastMessage)
     } catch (error) {
       toast.error('Something went wrong')
