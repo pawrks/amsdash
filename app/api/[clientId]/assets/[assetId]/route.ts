@@ -64,7 +64,7 @@ export async function PATCH(
 
     const asset = await prismadb.asset.updateMany({
       where: {
-        id: params.clientId
+        id: params.assetId
       },
       data: {
         label,
@@ -107,7 +107,7 @@ export async function DELETE(
 
     const asset = await prismadb.asset.deleteMany({
       where: {
-        id: params.clientId
+        id: params.assetId
       }
     })
     return NextResponse.json(asset)

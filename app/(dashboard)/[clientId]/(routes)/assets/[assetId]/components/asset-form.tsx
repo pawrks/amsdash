@@ -88,7 +88,7 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
       setLoading(true)
       await axios.delete(`/api/${params.clientId}/assets/${params.assetId}`)
       router.refresh()
-      router.push('/')
+      router.push(`/${params.clientId}/assets`)
       toast.success('Asset deleted')
     } catch (error) {
       toast.error('Make sure all connections to this asset are deleted first.')
@@ -169,7 +169,6 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
           </Button>
         </form>
       </Form>
-      <Separator />
     </>
   )
 }
