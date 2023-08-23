@@ -24,11 +24,11 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 
-import { AssetColumn } from './columns'
+import { CategoryColumn } from './columns'
 import { AlertModal } from '@/components/modals/alert-modal'
 
 interface CellActionProps {
-  data: AssetColumn
+  data: CategoryColumn
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {

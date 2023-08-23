@@ -28,7 +28,7 @@ export const AssetClient: React.FC<AssetClientProps> = ({ data }) => {
         />
         <Button onClick={() => router.push(`/${params.clientId}/assets/new`)}>
           <Plus className="mr-2 h-4 w-4" />
-          Add Asset
+          Add New
         </Button>
       </div>
       <Separator />

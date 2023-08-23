@@ -6,26 +6,42 @@ import { ArrowUpDown } from 'lucide-react'
 
 import { CellAction } from './cell-action'
 
-export type AssetColumn = {
+export type CategoryColumn = {
   id: string
-  label: string
+  name: string
+  assetLabel: string
   createdAt: string
 }
 
-export const columns: ColumnDef<AssetColumn>[] = [
+export const columns: ColumnDef<CategoryColumn>[] = [
   {
-    accessorKey: 'label',
+    accessorKey: 'name',
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
-          Label
+          Name
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     }
+  },
+  {
+    accessorKey: 'asset',
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Asset
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+    cell: ({ row }) => row.original.assetLabel
   },
   {
     accessorKey: 'createdAt',
@@ -39,7 +55,8 @@ export const columns: ColumnDef<AssetColumn>[] = [
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
-    }
+    },
+    cell: ({ row }) => row.original.assetLabel
   },
   {
     id: 'actions',
