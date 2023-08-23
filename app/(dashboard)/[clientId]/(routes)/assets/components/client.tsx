@@ -9,6 +9,7 @@ import { Separator } from '@/components/ui/separator'
 import { DataTable } from '@/components/ui/data-table'
 
 import { AssetColumn, columns } from './columns'
+import { ApiList } from '@/components/ui/api-list'
 
 interface AssetClientProps {
   data: AssetColumn[]
@@ -32,6 +33,9 @@ export const AssetClient: React.FC<AssetClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable searchKey="label" columns={columns} data={data} />
+      <Heading title="API" description="API calls for Assets" />
+      <Separator />
+      <ApiList entityName="assets" entityIdName="assetId" />
     </>
   )
 }
