@@ -27,7 +27,7 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 - **Docker Compose & Ansible**:Container orchestration for streamlined deployment and management
 - **Github Actions**: Automated developer workflows
 
-## Outline
+## Outline & Roadmap
 
 ### Phase 1: Core Functionality
 
@@ -60,7 +60,11 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 #### AI-Driven Monitoring & Analytics
 
 - Live monitoring of power, network, and systems
-- Predictive analytics powered by machine learning library TensorFlow
+- Predictive analytics powered by machine learning library
+
+  - PyTorch
+  - TensorFlow
+  - Scikit-learn
 
   ![TensorFlow](./images/tensorflow-ar21.svg)
 
@@ -95,4 +99,4 @@ AMSdash is built to redefine asset management in the physical and virtual data c
   - 3D visualization and AR support
   - Interactive asset management interface
 
-Any suggestions for improvements are more than welcome!
+This project will be updated regularly, any suggestions for improvements are more than welcome!

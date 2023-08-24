@@ -90,7 +90,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
         loading={loading}
       />
       <div className="flex items-center justify-between">
-        <Heading title="Settings" description="Manage client preferences." />
+        <Heading title="Settings" description="Manage client preferences" />
         <Button
           disabled={loading}
           variant="destructive"

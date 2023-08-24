@@ -7,8 +7,8 @@ import { toast } from 'react-hot-toast'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useParams, useRouter } from 'next/navigation'
-import { Asset } from '@prisma/client'
 import { Trash } from 'lucide-react'
+import { Asset, Category } from '@prisma/client'
 
 import { Heading } from '@/components/ui/heading'
 import { Button } from '@/components/ui/button'
@@ -23,58 +23,68 @@ import {
   FormMessage
 } from '@/components/ui/form'
 import { AlertModal } from '@/components/modals/alert-modal'
-import ImageUpload from '@/components/ui/image-upload'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select'
 
 const formSchema = z.object({
-  label: z.string().min(1, {
+  name: z.string().min(1, {
     message: 'Name requires at least 1 character.'
   }),
-  imageUrl: z.string().min(1, {
+  assetId: z.string().min(1, {
     message: 'Image URL requires at least 1 character.'
   })
 })
 
-type AssetFormValues = z.infer<typeof formSchema>
+type CategoryFormValues = z.infer<typeof formSchema>
 
-interface AssetFormProps {
-  initialData: Asset | null
+interface CategoryFormProps {
+  initialData: Category | null
+  assets: Asset[]
 }
 
-export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
+export const CategoryForm: React.FC<CategoryFormProps> = ({
+  initialData,
+  assets
+}) => {
   const params = useParams()
   const router = useRouter()
 
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const title = initialData ? 'Edit Asset' : 'Create Asset'
+  const title = initialData ? 'Edit Category' : 'Create Category'
   const description = initialData
-    ? 'Edit an Asset'
-    : 'Create a new asset for a client'
-  const toastMessage = initialData ? 'Asset updated' : 'Asset created'
+    ? 'Edit a Category'
+    : 'Create a new category for an asset'
+  const toastMessage = initialData ? 'Category updated' : 'Category created'
   const action = initialData ? 'Save changes' : 'Create'
 
-  const form = useForm<AssetFormValues>({
+  const form = useForm<CategoryFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
-      label: '',
-      imageUrl: ''
+      name: '',
+      assetId: ''
     }
   })
 
-  const onSubmit = async (data: AssetFormValues) => {
+  const onSubmit = async (data: CategoryFormValues) => {
     try {
       setLoading(true)
       if (initialData) {
         await axios.patch(
-          `/api/${params.clientId}/assets/${params.assetId}`,
+          `/api/${params.clientId}/categories/${params.assetId}`,
           data
         )
       } else {
-        await axios.post(`/api/${params.clientId}/assets`, data)
+        await axios.post(`/api/${params.clientId}/categories`, data)
       }
       router.refresh()
-      router.push(`/${params.clientId}/assets`)
+      router.push(`/${params.clientId}/categories`)
       toast.success(toastMessage)
     } catch (error) {
       toast.error('Something went wrong')
@@ -86,12 +96,14 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(`/api/${params.clientId}/assets/${params.assetId}`)
+      await axios.delete(`/api/${params.clientId}/categories/${params.assetId}`)
       router.refresh()
-      router.push(`/${params.clientId}/assets`)
-      toast.success('Asset deleted')
+      router.push(`/${params.clientId}/categories`)
+      toast.success('Category deleted')
     } catch (error) {
-      toast.error('Make sure all connections to this asset are deleted first.')
+      toast.error(
+        'Make sure all connections to this category are deleted first.'
+      )
     } finally {
       setLoading(false)
       setOpen(false)
@@ -127,38 +139,55 @@ export const AssetForm: React.FC<AssetFormProps> = ({ initialData }) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 w-full"
         >
-          <FormField
-            control={form.control}
-            name="imageUrl"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Background Image</FormLabel>
-                <FormControl>
-                  <ImageUpload
-                    value={field.value ? [field.value] : []}
-                    disabled={loading}
-                    onChange={url => field.onChange(url)}
-                    onRemove={() => field.onChange('')}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <div className="grid grid-cols-3 gap-8">
             <FormField
               control={form.control}
-              name="label"
+              name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Asset label"
+                      placeholder="Category name"
                       {...field}
                     />
                   </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="assetId"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Asset</FormLabel>
+                  <Select
+                    disabled={loading}
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger
+                        defaultValue={field.value}
+                        placeholder="Select an asset"
+                      >
+                        <SelectValue
+                          defaultValue={field.value}
+                          placeholder="Select an asset"
+                        />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {assets.map(asset => (
+                        <SelectItem key={asset.id} value={asset.id}>
+                          {asset.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
