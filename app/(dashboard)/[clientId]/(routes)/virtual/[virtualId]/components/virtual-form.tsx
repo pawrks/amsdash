@@ -70,7 +70,7 @@ export const PhysicalForm: React.FC<PhysicalFormProps> = ({ initialData }) => {
       setLoading(true)
       if (initialData) {
         await axios.patch(
-          `/api/${params.clientId}/physical/${params.physicalId}`,
+          `/api/${params.physicalId}/physical/${params.physicalId}`,
           data
         )
       } else {

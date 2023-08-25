@@ -15,6 +15,7 @@ model Client {
   assets      Asset[] 
   categories  Category[]
   physical    Physical[]
+  virtual     Virtual[]
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
 }
@@ -50,10 +51,22 @@ model Physical {
   id          String      @id @default(uuid())
   clientId    String
   client      Client      @relation(fields: [clientId], references: [id])
-  name String
-  value String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  name        String
+  value       String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  
+  @@index([clientId])
+}
+
+model Virtual {
+  id          String      @id @default(uuid())
+  clientId    String
+  client      Client      @relation(fields: [clientId], references: [id])
+  name        String
+  value       String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
   
   @@index([clientId])
 }

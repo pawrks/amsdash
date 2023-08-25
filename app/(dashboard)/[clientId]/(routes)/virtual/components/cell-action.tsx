@@ -24,11 +24,11 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 
-import { PhysicalColumn } from './columns'
+import { AssetColumn } from './columns'
 import { AlertModal } from '@/components/modals/alert-modal'
 
 interface CellActionProps {
-  data: PhysicalColumn
+  data: AssetColumn
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -40,19 +40,17 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id)
-    toast.success('Physical asset ID copied to clipboard.')
+    toast.success('Asset ID copied to clipboard.')
   }
 
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(`/api/${params.clientId}/physical/${data.id}`)
+      await axios.delete(`/api/${params.clientId}/assets/${data.id}`)
       router.refresh()
-      toast.success('Physical asset deleted')
+      toast.success('Asset deleted')
     } catch (error) {
-      toast.error(
-        'Please make sure all products connected to this physical asset are deleted first.'
-      )
+      toast.error('Make sure all connections to this asset are deleted first.')
     } finally {
       setLoading(false)
       setOpen(false)
@@ -81,9 +79,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
             Copy
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() =>
-              router.push(`/${params.clientId}/physical/${data.id}`)
-            }
+            onClick={() => router.push(`/${params.clientId}/assets/${data.id}`)}
           >
             <Edit className="mr-2 h-4 w-4" />
             Edit
