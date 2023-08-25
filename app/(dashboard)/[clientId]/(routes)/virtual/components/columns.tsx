@@ -6,14 +6,14 @@ import { ArrowUpDown } from 'lucide-react'
 
 import { CellAction } from './cell-action'
 
-export type PhysicalColumn = {
+export type VirtualColumn = {
   id: string
   name: string
   value: string
   createdAt: string
 }
 
-export const columns: ColumnDef<PhysicalColumn>[] = [
+export const columns: ColumnDef<VirtualColumn>[] = [
   {
     accessorKey: 'name',
     header: ({ column }) => {

@@ -24,11 +24,11 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 
-import { AssetColumn } from './columns'
+import { VirtualColumn } from './columns'
 import { AlertModal } from '@/components/modals/alert-modal'
 
 interface CellActionProps {
-  data: AssetColumn
+  data: VirtualColumn
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -40,17 +40,19 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id)
-    toast.success('Asset ID copied to clipboard.')
+    toast.success('Virtual asset ID copied to clipboard.')
   }
 
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(`/api/${params.clientId}/assets/${data.id}`)
+      await axios.delete(`/api/${params.clientId}/virtual/${data.id}`)
       router.refresh()
-      toast.success('Asset deleted')
+      toast.success('Virtual Asset deleted')
     } catch (error) {
-      toast.error('Make sure all connections to this asset are deleted first.')
+      toast.error(
+        'Make sure all connections to this virtual asset are deleted first'
+      )
     } finally {
       setLoading(false)
       setOpen(false)
@@ -79,7 +81,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
             Copy
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => router.push(`/${params.clientId}/assets/${data.id}`)}
+            onClick={() =>
+              router.push(`/${params.clientId}/virtual/${data.id}`)
+            }
           >
             <Edit className="mr-2 h-4 w-4" />
             Edit

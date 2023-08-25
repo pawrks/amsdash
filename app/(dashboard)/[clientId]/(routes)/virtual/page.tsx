@@ -2,11 +2,11 @@ import { format } from 'date-fns'
 
 import prismadb from '@/lib/prismadb'
 
-import { PhysicalClient } from './components/client'
-import { PhysicalColumn } from './components/columns'
+import { VirtualClient } from './components/client'
+import { VirtualColumn } from './components/columns'
 
-const PhysicalPage = async ({ params }: { params: { clientId: string } }) => {
-  const physical = await prismadb.physical.findMany({
+const VirtualPage = async ({ params }: { params: { clientId: string } }) => {
+  const virtual = await prismadb.virtual.findMany({
     where: {
       clientId: params.clientId
     },
@@ -15,7 +15,7 @@ const PhysicalPage = async ({ params }: { params: { clientId: string } }) => {
     }
   })
 
-  const formattedPhysical: PhysicalColumn[] = physical.map(item => ({
+  const formattedVirtual: VirtualColumn[] = virtual.map(item => ({
     id: item.id,
     name: item.name,
     value: item.value,
@@ -25,10 +25,10 @@ const PhysicalPage = async ({ params }: { params: { clientId: string } }) => {
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <PhysicalClient data={formattedPhysical} />
+        <VirtualClient data={formattedVirtual} />
       </div>
     </div>
   )
 }
 
-export default PhysicalPage
+export default VirtualPage

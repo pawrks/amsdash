@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useParams, useRouter } from 'next/navigation'
-import { Physical } from '@prisma/client'
+import { Virtual } from '@prisma/client'
 import { Trash } from 'lucide-react'
 
 import { Heading } from '@/components/ui/heading'
@@ -33,31 +33,29 @@ const formSchema = z.object({
   })
 })
 
-type PhysicalFormValues = z.infer<typeof formSchema>
+type VirtualFormValues = z.infer<typeof formSchema>
 
-interface PhysicalFormProps {
-  initialData: Physical | null
-  name: string
-  value: string
+interface VirtualFormProps {
+  initialData: Virtual | null
 }
 
-export const PhysicalForm: React.FC<PhysicalFormProps> = ({ initialData }) => {
+export const VirtualForm: React.FC<VirtualFormProps> = ({ initialData }) => {
   const params = useParams()
   const router = useRouter()
 
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const title = initialData ? 'Edit physical asset' : 'Create physical asset'
+  const title = initialData ? 'Edit Virtual Asset' : 'Create Virtual Asset'
   const description = initialData
-    ? 'Edit a physical asset'
-    : 'Create a new physcial asset for a client'
+    ? 'Edit a virtual asset'
+    : 'Create a new virtual asset for a client'
   const toastMessage = initialData
-    ? 'Physical asset updated'
-    : 'Physical asset created'
+    ? 'Virtual asset updated'
+    : 'Virtual asset created'
   const action = initialData ? 'Save changes' : 'Create'
 
-  const form = useForm<PhysicalFormValues>({
+  const form = useForm<VirtualFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       name: '',
@@ -65,19 +63,19 @@ export const PhysicalForm: React.FC<PhysicalFormProps> = ({ initialData }) => {
     }
   })
 
-  const onSubmit = async (data: PhysicalFormValues) => {
+  const onSubmit = async (data: VirtualFormValues) => {
     try {
       setLoading(true)
       if (initialData) {
         await axios.patch(
-          `/api/${params.physicalId}/physical/${params.physicalId}`,
+          `/api/${params.clientId}/virtual/${params.virtualId}`,
           data
         )
       } else {
-        await axios.post(`/api/${params.clientId}/physical`, data)
+        await axios.post(`/api/${params.clientId}/virtual`, data)
       }
       router.refresh()
-      router.push(`/${params.clientId}/physical`)
+      router.push(`/${params.clientId}/virtual`)
       toast.success(toastMessage)
     } catch (error) {
       toast.error('Something went wrong')
@@ -89,15 +87,13 @@ export const PhysicalForm: React.FC<PhysicalFormProps> = ({ initialData }) => {
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(
-        `/api/${params.clientId}/physical/${params.physicalId}`
-      )
+      await axios.delete(`/api/${params.clientId}/virtual/${params.virtualId}`)
       router.refresh()
-      router.push(`/${params.clientId}/physical`)
-      toast.success('Physcial asset deleted')
+      router.push(`/${params.clientId}/virtual`)
+      toast.success('Virtual asset deleted')
     } catch (error) {
       toast.error(
-        'Please make sure all products using this physical asset are deleted first'
+        'Please make sure all products using this virtual asset are deleted first'
       )
     } finally {
       setLoading(false)
@@ -144,7 +140,7 @@ export const PhysicalForm: React.FC<PhysicalFormProps> = ({ initialData }) => {
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Physcial asset name"
+                      placeholder="Virtual asset name"
                       {...field}
                     />
                   </FormControl>
@@ -161,7 +157,7 @@ export const PhysicalForm: React.FC<PhysicalFormProps> = ({ initialData }) => {
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Physcial asset value"
+                      placeholder="Virtual asset value"
                       {...field}
                     />
                   </FormControl>

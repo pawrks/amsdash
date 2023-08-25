@@ -8,14 +8,14 @@ import { Heading } from '@/components/ui/heading'
 import { Separator } from '@/components/ui/separator'
 import { DataTable } from '@/components/ui/data-table'
 
-import { PhysicalColumn, columns } from './columns'
+import { VirtualColumn, columns } from './columns'
 import { ApiList } from '@/components/ui/api-list'
 
-interface PhysicalClientProps {
-  data: PhysicalColumn[]
+interface VirtualClientProps {
+  data: VirtualColumn[]
 }
 
-export const PhysicalClient: React.FC<PhysicalClientProps> = ({ data }) => {
+export const VirtualClient: React.FC<VirtualClientProps> = ({ data }) => {
   const router = useRouter()
   const params = useParams()
 
@@ -23,19 +23,19 @@ export const PhysicalClient: React.FC<PhysicalClientProps> = ({ data }) => {
     <>
       <div className="flex items-center justify-between">
         <Heading
-          title={`Physical (${data.length})`}
-          description="Manage physical assets for individual clients"
+          title={`Virtual (${data.length})`}
+          description="Manage virtual assets for individual clients"
         />
-        <Button onClick={() => router.push(`/${params.clientId}/physical/new`)}>
+        <Button onClick={() => router.push(`/${params.clientId}/virtual/new`)}>
           <Plus className="mr-2 h-4 w-4" />
           Add New
         </Button>
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="API calls for Physical Assets" />
+      <Heading title="API" description="API calls for Virtual Assets" />
       <Separator />
-      <ApiList entityName="physical" entityIdName="PhysicalId" />
+      <ApiList entityName="virtual" entityIdName="VirtualId" />
     </>
   )
 }

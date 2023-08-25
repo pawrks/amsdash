@@ -10,17 +10,17 @@ export async function POST(
     const { userId } = auth()
     const body = await req.json()
 
-    const { label, imageUrl } = body
+    const { name, value } = body
 
     if (!userId) {
       return new NextResponse('Unauthenticated', { status: 401 })
     }
 
-    if (!label) {
-      return new NextResponse('Label is required', { status: 400 })
+    if (!name) {
+      return new NextResponse('Name is required', { status: 400 })
     }
-    if (!imageUrl) {
-      return new NextResponse('Image URL is required', { status: 400 })
+    if (!value) {
+      return new NextResponse('Value is required', { status: 400 })
     }
 
     if (!params.clientId) {
@@ -38,17 +38,17 @@ export async function POST(
       return new NextResponse('Unauthorized', { status: 403 })
     }
 
-    const asset = await prismadb.asset.create({
+    const virtual = await prismadb.virtual.create({
       data: {
-        label,
-        imageUrl,
+        name,
+        value,
         clientId: params.clientId
       }
     })
 
-    return NextResponse.json(asset)
+    return NextResponse.json(virtual)
   } catch (error) {
-    console.log('[ASSETS_POST]', error)
+    console.log('[VIRTUAL_POST]', error)
     return new NextResponse('Internal error', { status: 500 })
   }
 }
@@ -62,15 +62,15 @@ export async function GET(
       return new NextResponse('Client ID is required', { status: 400 })
     }
 
-    const assets = await prismadb.asset.findMany({
+    const virtual = await prismadb.virtual.findMany({
       where: {
         clientId: params.clientId
       }
     })
 
-    return NextResponse.json(assets)
+    return NextResponse.json(virtual)
   } catch (error) {
-    console.log('[ASSETS_GET]', error)
+    console.log('[VIRTUAL_GET]', error)
     return new NextResponse('Internal error', { status: 500 })
   }
 }
