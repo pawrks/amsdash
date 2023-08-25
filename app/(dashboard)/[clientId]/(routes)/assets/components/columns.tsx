@@ -22,7 +22,7 @@ export const columns: ColumnDef<AssetColumn>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           Label
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
         </Button>
       )
     }
@@ -36,7 +36,7 @@ export const columns: ColumnDef<AssetColumn>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           Created
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
         </Button>
       )
     }

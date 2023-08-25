@@ -24,7 +24,7 @@ export const AssetClient: React.FC<AssetClientProps> = ({ data }) => {
       <div className="flex items-center justify-between">
         <Heading
           title={`Assets (${data.length})`}
-          description="Manage assets for individual clients."
+          description="Manage assets for individual clients"
         />
         <Button onClick={() => router.push(`/${params.clientId}/assets/new`)}>
           <Plus className="mr-2 h-4 w-4" />

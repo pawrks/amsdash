@@ -40,17 +40,19 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id)
-    toast.success('Asset ID copied to clipboard.')
+    toast.success('Category ID copied to clipboard')
   }
 
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(`/api/${params.clientId}/assets/${data.id}`)
+      await axios.delete(`/api/${params.clientId}/categories/${data.id}`)
       router.refresh()
-      toast.success('Asset deleted')
+      toast.success('Category deleted')
     } catch (error) {
-      toast.error('Make sure all connections to this asset are deleted first.')
+      toast.error(
+        'Please make sure all products connected to this category are deleted first'
+      )
     } finally {
       setLoading(false)
       setOpen(false)
@@ -79,7 +81,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
             Copy
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => router.push(`/${params.clientId}/assets/${data.id}`)}
+            onClick={() =>
+              router.push(`/${params.clientId}/categories/${data.id}`)
+            }
           >
             <Edit className="mr-2 h-4 w-4" />
             Edit

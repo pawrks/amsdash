@@ -60,10 +60,10 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 #### AI-Driven Monitoring & Analytics
 
 - Live monitoring of power, network, and systems
-- Predictive analytics powered by machine learning library
+- Predictive analytics powered by machine learning libraries
 
-  - PyTorch
   - TensorFlow
+  - PyTorch
   - Scikit-learn
 
   ![TensorFlow](./images/tensorflow-ar21.svg)
