@@ -29,6 +29,16 @@ export function MainNav({
       active: pathname.startsWith(`/${params.clientId}/categories`)
     },
     {
+      href: `/${params.clientId}/physical`,
+      label: 'Physical',
+      active: pathname.startsWith(`/${params.clientId}/physical`)
+    },
+    {
+      href: `/${params.clientId}/virtual`,
+      label: 'Virtual',
+      active: pathname.startsWith(`/${params.clientId}/virtual`)
+    },
+    {
       href: `/${params.clientId}/products`,
       label: 'Products',
       active: pathname.startsWith(`/${params.clientId}/products`)
@@ -42,11 +52,6 @@ export function MainNav({
       href: `/${params.clientId}/insights`,
       label: 'Insights',
       active: pathname.startsWith(`/${params.clientId}/insights`)
-    },
-    {
-      href: `/${params.clientId}/sales`,
-      label: 'Sales',
-      active: pathname.startsWith(`/${params.clientId}/sales`)
     },
     {
       href: `/${params.clientId}/docs`,
