@@ -24,21 +24,6 @@ export function MainNav({
       active: pathname.startsWith(`/${params.clientId}/assets`)
     },
     {
-      href: `/${params.clientId}/categories`,
-      label: 'Categories',
-      active: pathname.startsWith(`/${params.clientId}/categories`)
-    },
-    {
-      href: `/${params.clientId}/physical`,
-      label: 'Physical',
-      active: pathname.startsWith(`/${params.clientId}/physical`)
-    },
-    {
-      href: `/${params.clientId}/virtual`,
-      label: 'Virtual',
-      active: pathname.startsWith(`/${params.clientId}/virtual`)
-    },
-    {
       href: `/${params.clientId}/products`,
       label: 'Products',
       active: pathname.startsWith(`/${params.clientId}/products`)
