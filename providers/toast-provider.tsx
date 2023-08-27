@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import { Toaster } from "react-hot-toast";
@@ -7,3 +8,12 @@ export const ToastProvider = () => {
     <Toaster />
    );
 };
+=======
+'use client'
+
+import { Toaster } from 'react-hot-toast'
+
+export const ToasterProvider = () => {
+  return <Toaster />
+}
+>>>>>>> origin/main

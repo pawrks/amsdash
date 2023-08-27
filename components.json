@@ -2,6 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema.json",
   "style": "default",
   "rsc": true,
+<<<<<<< HEAD
+=======
+  "tsx": true,
+>>>>>>> origin/main
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "app/globals.css",
@@ -12,4 +16,8 @@
     "components": "@/components",
     "utils": "@/lib/utils"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
