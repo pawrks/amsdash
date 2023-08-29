@@ -4,7 +4,7 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 ## Core Stack
 
-- **Next.js, & TypeScript**: Server-side rendering with statically typed language support for powerful and efficient development
+- **Next.js, & TypeScript**: Server-side rendering with statically typed language for powerful and efficient development
 - **SQL Database**: MySQL and Prisma
 - **Express**: Node.js server framework to communicate with external APIs
 - **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
