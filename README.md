@@ -5,10 +5,9 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 ## Core Stack
 
 - **Next.js, & TypeScript**: Server-side rendering with statically typed language support for powerful and efficient development
-- **shadcn/ui**: Modern and responsive, React-based, modular UI
 - **SQL Database**: MySQL and Prisma
 - **Express**: Node.js server framework to communicate with external APIs
-- **Docker Compose & Ansible**:Container orchestration for streamlined deployment and management
+- **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
 - **Github Actions**: Automated developer workflows
 
 ## Outline & Roadmap
@@ -36,7 +35,11 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 #### Asset Management Dashboard
 
-- Real-time inventory management
+- Real-time asset & inventory management
+  - Vendor equipment log    
+  - Equipment rental checkout
+  - Vehicle checkout
+    
 - Data analytics integration for actionable insights
 
 ### Phase 2: Advanced Features
@@ -44,8 +47,7 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 #### AI-Driven Monitoring & Analytics
 
 - Live monitoring of power, network, and systems
-- Predictive analytics powered by machine learning libraries
-
+- Predictive analytics powered with machine learning libraries
   - TensorFlow
   - PyTorch
   - Scikit-learn
