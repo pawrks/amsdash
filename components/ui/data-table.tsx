@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 import {
   ColumnDef,
   SortingState,
@@ -11,8 +11,8 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+  useReactTable
+} from '@tanstack/react-table'
 
 import {
   Table,
@@ -20,27 +20,27 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
+  TableRow
+} from '@/components/ui/table'
+import { Input } from '@/components/ui/input'
 
-import { DataTablePagination } from "./pagination";
-import { DataTableViewOptions } from "./column-toggle";
+import { DataTablePagination } from './pagination'
+import { DataTableViewOptions } from './column-toggle'
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-  searchKey: string;
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
+  searchKey: string
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
-  searchKey,
+  searchKey
 }: DataTableProps<TData, TValue>) {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
@@ -55,20 +55,20 @@ export function DataTable<TData, TValue>({
     state: {
       sorting,
       columnFilters,
-      columnVisibility,
-    },
-  });
+      columnVisibility
+    }
+  })
 
   return (
     <div>
       <div className="flex items-center py-4">
         <Input
           placeholder="Search"
-          value={(table.getColumn(searchKey)?.getFilterValue() as string) ?? ""}
+          value={(table.getColumn(searchKey)?.getFilterValue() as string) ?? ''}
           onChange={(event) =>
             table.getColumn(searchKey)?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className="h-8 w-[150px] lg:w-[250px]"
         />
         <DataTableViewOptions table={table} />
       </div>
@@ -87,7 +87,7 @@ export function DataTable<TData, TValue>({
                             header.getContext()
                           )}
                     </TableHead>
-                  );
+                  )
                 })}
               </TableRow>
             ))}
@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
+                  data-state={row.getIsSelected() && 'selected'}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -126,5 +126,5 @@ export function DataTable<TData, TValue>({
         <DataTablePagination table={table} />
       </div>
     </div>
-  );
+  )
 }
