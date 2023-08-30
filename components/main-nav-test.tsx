@@ -22,17 +22,17 @@ export function MainNav({
   const pathname = usePathname()
   const params = useParams()
 
-  const assetRoutes = [
+  const storeRoutes = [
     {
       title: 'Overview',
-      description: 'View store analytics and recent sales figures',
+      description: 'Store metrics and recent sales figures',
       href: `/${params.storeId}`,
       label: 'Overview',
       active: pathname === `/${params.storeId}`
     },
     {
       title: 'Billboards',
-      description: "Images that appear on your store's homepage",
+      description: 'Images for store website',
       href: `/${params.storeId}/billboards`,
       label: 'Billboards',
       active: pathname === `/${params.storeId}/billboards`
@@ -74,23 +74,103 @@ export function MainNav({
     },
     {
       title: 'Settings',
-      description: 'Manage preferences for your store',
+      description: 'Manage preferences for the store',
       href: `/${params.storeId}/settings`,
       label: 'Settings',
       active: pathname === `/${params.storeId}/settings`
     }
   ]
 
+  const assetRoutes = [
+    {
+      title: 'Facilities',
+      description: 'Data center phases and general information',
+      href: `/${params.storeId}/assets/facilities`
+    },
+    {
+      title: 'Network',
+      description: 'IP blocks & cross-connects',
+      href: `/${params.storeId}/assets/network`,
+      label: 'Network'
+    },
+    {
+      title: 'Power',
+      description: 'Power audit | Service vs usage',
+      href: `/${params.storeId}/assets/power`,
+      label: 'Power'
+    },
+    {
+      title: 'Cabinets',
+      description: 'Manage cabinets & floor plans',
+      href: `/${params.storeId}/assets/cabinets`,
+      label: 'Cabinets'
+    }
+  ]
+
   const supportRoutes = [
     {
       title: 'Access List',
-      description: 'Check-in & check-out data center visitors',
-      href: `/${params.storeId}/support/access-list`
+      description: 'Check-in & check-out facility visitors',
+      href: `/${params.storeId}/support/access-list`,
+      label: 'Access List'
     },
     {
       title: 'Package Tracking',
       description: 'Track incoming and outgoing packages',
-      href: `/${params.storeId}/support/package-tracking`
+      href: `/${params.storeId}/support/package-tracking`,
+      label: 'Package Tracking'
+    },
+    {
+      title: 'Tickets',
+      description: 'Ticket portal for support requests',
+      href: `/${params.storeId}/support/tickets`,
+      label: 'Tickets'
+    },
+    {
+      title: 'Vendor Management',
+      description: 'Vendor contacts & on-site equipment'
+    }
+  ]
+
+  const insightRoutes = [
+    {
+      title: 'Historical Metrics',
+      description: 'Past metrics, future insights',
+      href: `/${params.storeId}/insights/historical-metrics`,
+      label: 'Historical Metrics'
+    },
+    {
+      title: 'Advanced Analytics',
+      description: 'Leverage modern, advanced AI & machine learning',
+      href: `/${params.storeId}/insights/advanced-analytics`,
+      label: 'Advanced Analytics'
+    },
+    {
+      title: 'Data Modeling',
+      description: 'Modeling predictions with data science',
+      href: `/${params.storeId}/insights/data-modeling`,
+      label: 'Data Modeling'
+    },
+    {
+      title: 'Logging',
+      description: 'Activity logs for a variety of systems',
+      href: `/${params.storeId}/insights/logs`,
+      label: 'Logs'
+    }
+  ]
+
+  const accountRoutes = [
+    {
+      title: 'Sales',
+      description: 'Sales and revenue figures',
+      href: `/${params.storeId}/accounts/sales`,
+      label: 'Sales'
+    },
+    {
+      title: 'Billing',
+      description: 'Invoices and payment information',
+      href: `/${params.storeId}/accounts/billing`,
+      label: 'Billing'
     }
   ]
 
@@ -98,14 +178,30 @@ export function MainNav({
     <NavigationMenu className="ml-4">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Colo-Store</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {assetRoutes.map(route => (
+              {storeRoutes.map(route => (
                 <ListItem
                   key={route.title}
                   title={route.title}
                   href={route.href}
+                >
+                  {route.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              {assetRoutes.map(route => (
+                <ListItem
+                  key={route.title}
+                  title={route.title}
+                  href={route.title}
                 >
                   {route.description}
                 </ListItem>
@@ -133,7 +229,23 @@ export function MainNav({
           <NavigationMenuTrigger>Insights</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              {assetRoutes.map(route => (
+              {insightRoutes.map(route => (
+                <ListItem
+                  key={route.href}
+                  title={route.title}
+                  href={route.href}
+                >
+                  {route.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Accounts</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              {accountRoutes.map(route => (
                 <ListItem
                   key={route.href}
                   title={route.title}
