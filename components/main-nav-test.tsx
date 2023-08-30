@@ -14,6 +14,31 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
+import {
+  BrainCircuit,
+  Building,
+  Contact,
+  FolderClock,
+  Folders,
+  Gauge,
+  Landmark,
+  LayoutDashboard,
+  List,
+  MailQuestion,
+  Microscope,
+  Package,
+  Palette,
+  Plug,
+  Receipt,
+  Ruler,
+  ScrollText,
+  Server,
+  Settings,
+  Share2,
+  ShieldCheck,
+  ShoppingBag,
+  Ticket
+} from 'lucide-react'
 
 export function MainNav({
   className,
@@ -26,58 +51,58 @@ export function MainNav({
     {
       title: 'Overview',
       description: 'Store metrics and recent sales figures',
+      icon: <Gauge className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}`,
-      label: 'Overview',
-      active: pathname === `/${params.storeId}`
+      label: 'Overview'
     },
     {
       title: 'Billboards',
       description: 'Images for store website',
+      icon: <LayoutDashboard className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/billboards`,
-      label: 'Billboards',
-      active: pathname === `/${params.storeId}/billboards`
+      label: 'Billboards'
     },
     {
       title: 'Categories',
       description: 'Organize products into categories',
+      icon: <List className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/categories`,
-      label: 'Categories',
-      active: pathname === `/${params.storeId}/categories`
+      label: 'Categories'
     },
     {
       title: 'Sizes',
       description: 'Size options for products',
+      icon: <Ruler className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/sizes`,
-      label: 'Sizes',
-      active: pathname === `/${params.storeId}/sizes`
+      label: 'Sizes'
     },
     {
       title: 'Colors',
       description: 'Color options for products',
+      icon: <Palette className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/colors`,
-      label: 'Colors',
-      active: pathname === `/${params.storeId}/colors`
+      label: 'Colors'
     },
     {
       title: 'Products',
       description: 'Inventory of products available',
+      icon: <ShoppingBag className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/products`,
-      label: 'Products',
-      active: pathname === `/${params.storeId}/products`
+      label: 'Products'
     },
     {
       title: 'Orders',
       description: 'Orders placed by customers',
+      icon: <Folders className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/orders`,
-      label: 'Orders',
-      active: pathname === `/${params.storeId}/orders`
+      label: 'Orders'
     },
     {
       title: 'Settings',
       description: 'Manage preferences for the store',
+      icon: <Settings className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/settings`,
-      label: 'Settings',
-      active: pathname === `/${params.storeId}/settings`
+      label: 'Settings'
     }
   ]
 
@@ -85,23 +110,28 @@ export function MainNav({
     {
       title: 'Facilities',
       description: 'Data center phases and general information',
-      href: `/${params.storeId}/assets/facilities`
+      icon: <Building className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/assets/facilities`,
+      label: 'Facilities'
     },
     {
       title: 'Network',
       description: 'IP blocks & cross-connects',
+      icon: <Share2 className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/assets/network`,
       label: 'Network'
     },
     {
       title: 'Power',
       description: 'Power audit | Service vs usage',
+      icon: <Plug className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/assets/power`,
       label: 'Power'
     },
     {
       title: 'Cabinets',
       description: 'Manage cabinets & floor plans',
+      icon: <Server className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/assets/cabinets`,
       label: 'Cabinets'
     }
@@ -111,24 +141,30 @@ export function MainNav({
     {
       title: 'Access List',
       description: 'Check-in & check-out facility visitors',
+      icon: <ShieldCheck className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/access-list`,
       label: 'Access List'
     },
     {
       title: 'Package Tracking',
       description: 'Track incoming and outgoing packages',
+      icon: <Package className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/package-tracking`,
       label: 'Package Tracking'
     },
     {
       title: 'Tickets',
       description: 'Ticket portal for support requests',
+      icon: <Ticket className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/tickets`,
       label: 'Tickets'
     },
     {
       title: 'Vendor Management',
-      description: 'Vendor contacts & on-site equipment'
+      description: 'Vendor contacts & on-site visits',
+      icon: <Contact className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/support/vendor-management`,
+      label: 'Vendor Management'
     }
   ]
 
@@ -136,24 +172,28 @@ export function MainNav({
     {
       title: 'Historical Metrics',
       description: 'Past metrics, future insights',
+      icon: <FolderClock className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/insights/historical-metrics`,
       label: 'Historical Metrics'
     },
     {
       title: 'Advanced Analytics',
       description: 'Leverage modern, advanced AI & machine learning',
+      icon: <BrainCircuit className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/insights/advanced-analytics`,
       label: 'Advanced Analytics'
     },
     {
       title: 'Data Modeling',
       description: 'Modeling predictions with data science',
+      icon: <Microscope className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/insights/data-modeling`,
       label: 'Data Modeling'
     },
     {
       title: 'Logging',
       description: 'Activity logs for a variety of systems',
+      icon: <ScrollText className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/insights/logs`,
       label: 'Logs'
     }
@@ -163,12 +203,14 @@ export function MainNav({
     {
       title: 'Sales',
       description: 'Sales and revenue figures',
+      icon: <Landmark className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/accounts/sales`,
       label: 'Sales'
     },
     {
       title: 'Billing',
       description: 'Invoices and payment information',
+      icon: <Receipt className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/accounts/billing`,
       label: 'Billing'
     }
@@ -183,6 +225,7 @@ export function MainNav({
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {storeRoutes.map(route => (
                 <ListItem
+                  icon={route.icon}
                   key={route.title}
                   title={route.title}
                   href={route.href}
@@ -199,6 +242,7 @@ export function MainNav({
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {assetRoutes.map(route => (
                 <ListItem
+                  icon={route.icon}
                   key={route.title}
                   title={route.title}
                   href={route.title}
@@ -215,6 +259,7 @@ export function MainNav({
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {supportRoutes.map(route => (
                 <ListItem
+                  icon={route.icon}
                   key={route.title}
                   title={route.title}
                   href={route.title}
@@ -231,6 +276,7 @@ export function MainNav({
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {insightRoutes.map(route => (
                 <ListItem
+                  icon={route.icon}
                   key={route.href}
                   title={route.title}
                   href={route.href}
@@ -247,6 +293,7 @@ export function MainNav({
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {accountRoutes.map(route => (
                 <ListItem
+                  icon={route.icon}
                   key={route.href}
                   title={route.title}
                   href={route.href}
@@ -269,10 +316,15 @@ export function MainNav({
   )
 }
 
+type ListItemProps = {
+  icon?: React.ReactNode
+  title: string
+}
+
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+  ListItemProps & React.ComponentPropsWithoutRef<'a'>
+>(({ className, title, children, icon, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -284,6 +336,7 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
+          {icon && <span>{icon}</span>}
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
