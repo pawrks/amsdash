@@ -15,6 +15,7 @@ import {
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
 import {
+  ArrowUpDown,
   BrainCircuit,
   Building,
   Contact,
@@ -30,6 +31,7 @@ import {
   Plug,
   Receipt,
   Ruler,
+  Scaling,
   ScrollText,
   Settings,
   Share2,
@@ -70,7 +72,7 @@ export function MainNav({
     {
       title: 'Sizes',
       description: 'Size options for products',
-      icon: <Ruler className="mr-2 h-4 w-4" />,
+      icon: <Scaling className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/sizes`,
       label: 'Sizes'
     },
@@ -80,6 +82,20 @@ export function MainNav({
       icon: <Palette className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/colors`,
       label: 'Colors'
+    },
+    {
+      title: 'Lengths',
+      description: 'Length options for products',
+      icon: <Ruler className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/lengths`,
+      label: 'Lengths'
+    },
+    {
+      title: 'Data Rates',
+      description: 'Data rate options for products',
+      icon: <ArrowUpDown className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/data-rates`,
+      label: 'Data Rates'
     },
     {
       title: 'Products',
@@ -218,7 +234,7 @@ export function MainNav({
     <NavigationMenu className="ml-4">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Web-Store</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Inventory</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {storeRoutes.map(route => (
