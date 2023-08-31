@@ -24,7 +24,6 @@ import {
   Landmark,
   LayoutDashboard,
   List,
-  MailQuestion,
   Microscope,
   Package,
   Palette,
@@ -32,11 +31,11 @@ import {
   Receipt,
   Ruler,
   ScrollText,
-  Server,
   Settings,
   Share2,
   ShieldCheck,
   ShoppingBag,
+  Stethoscope,
   Ticket
 } from 'lucide-react'
 
@@ -44,13 +43,12 @@ export function MainNav({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
-  const pathname = usePathname()
   const params = useParams()
 
   const storeRoutes = [
     {
       title: 'Overview',
-      description: 'Store metrics and recent sales figures',
+      description: 'Store metrics & recent sales figures',
       icon: <Gauge className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}`,
       label: 'Overview'
@@ -109,7 +107,7 @@ export function MainNav({
   const assetRoutes = [
     {
       title: 'Facilities',
-      description: 'Data center phases and general information',
+      description: 'Data center phases & floor plans',
       icon: <Building className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/assets/facilities`,
       label: 'Facilities'
@@ -129,11 +127,11 @@ export function MainNav({
       label: 'Power'
     },
     {
-      title: 'Cabinets',
-      description: 'Manage cabinets & floor plans',
-      icon: <Server className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/cabinets`,
-      label: 'Cabinets'
+      title: 'Vendor Management',
+      description: 'Vendor contacts & on-site visits',
+      icon: <Contact className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/support/vendor-management`,
+      label: 'Vendor Management'
     }
   ]
 
@@ -142,12 +140,12 @@ export function MainNav({
       title: 'Access List',
       description: 'Check-in & check-out facility visitors',
       icon: <ShieldCheck className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/support/access-list`,
+      href: `/${params.storeId}/access-list`,
       label: 'Access List'
     },
     {
       title: 'Package Tracking',
-      description: 'Track incoming and outgoing packages',
+      description: 'Track incoming & outgoing packages',
       icon: <Package className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/package-tracking`,
       label: 'Package Tracking'
@@ -160,9 +158,9 @@ export function MainNav({
       label: 'Tickets'
     },
     {
-      title: 'Vendor Management',
-      description: 'Vendor contacts & on-site visits',
-      icon: <Contact className="mr-2 h-4 w-4" />,
+      title: 'Monitoring',
+      description: 'Real-time infrastructure health monitoring ',
+      icon: <Stethoscope className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/vendor-management`,
       label: 'Vendor Management'
     }
@@ -178,7 +176,7 @@ export function MainNav({
     },
     {
       title: 'Advanced Analytics',
-      description: 'Leverage modern, advanced AI & machine learning',
+      description: 'Leverage modern AI & advanced machine learning',
       icon: <BrainCircuit className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/insights/advanced-analytics`,
       label: 'Advanced Analytics'
@@ -245,7 +243,7 @@ export function MainNav({
                   icon={route.icon}
                   key={route.title}
                   title={route.title}
-                  href={route.title}
+                  href={route.href}
                 >
                   {route.description}
                 </ListItem>
@@ -262,7 +260,7 @@ export function MainNav({
                   icon={route.icon}
                   key={route.title}
                   title={route.title}
-                  href={route.title}
+                  href={route.href}
                 >
                   {route.description}
                 </ListItem>
