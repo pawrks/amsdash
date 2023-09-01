@@ -47,6 +47,37 @@ export function MainNav({
 }: React.HTMLAttributes<HTMLElement>) {
   const params = useParams()
 
+  const assetRoutes = [
+    {
+      title: 'Facilities',
+      description: 'Data center phases & floor plans',
+      icon: <Building className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/assets/facilities`,
+      label: 'Facilities'
+    },
+    {
+      title: 'Network',
+      description: 'IP blocks & cross-connects',
+      icon: <Share2 className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/assets/network`,
+      label: 'Network'
+    },
+    {
+      title: 'Power',
+      description: 'Power audit | Service vs usage',
+      icon: <Plug className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/assets/power`,
+      label: 'Power'
+    },
+    {
+      title: 'Vendor Management',
+      description: 'Vendor contacts & on-site visits',
+      icon: <Contact className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/support/vendor-management`,
+      label: 'Vendor Management'
+    }
+  ]
+
   const storeRoutes = [
     {
       title: 'Overview',
@@ -117,37 +148,6 @@ export function MainNav({
       icon: <Settings className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/settings`,
       label: 'Settings'
-    }
-  ]
-
-  const assetRoutes = [
-    {
-      title: 'Facilities',
-      description: 'Data center phases & floor plans',
-      icon: <Building className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/facilities`,
-      label: 'Facilities'
-    },
-    {
-      title: 'Network',
-      description: 'IP blocks & cross-connects',
-      icon: <Share2 className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/network`,
-      label: 'Network'
-    },
-    {
-      title: 'Power',
-      description: 'Power audit | Service vs usage',
-      icon: <Plug className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/power`,
-      label: 'Power'
-    },
-    {
-      title: 'Vendor Management',
-      description: 'Vendor contacts & on-site visits',
-      icon: <Contact className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/support/vendor-management`,
-      label: 'Vendor Management'
     }
   ]
 
@@ -234,10 +234,10 @@ export function MainNav({
     <NavigationMenu className="ml-4">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Inventory</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {storeRoutes.map(route => (
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              {assetRoutes.map(route => (
                 <ListItem
                   icon={route.icon}
                   key={route.title}
@@ -251,10 +251,10 @@ export function MainNav({
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Inventory</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              {assetRoutes.map(route => (
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {storeRoutes.map(route => (
                 <ListItem
                   icon={route.icon}
                   key={route.title}

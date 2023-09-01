@@ -26,7 +26,9 @@ export const DataRateClient: React.FC<DataRateClientProps> = ({ data }) => {
           title={`Data Rates (${data.length})`}
           description="Manage data rates for products"
         />
-        <Button onClick={() => router.push(`/${params.storeId}/data-rate/new`)}>
+        <Button
+          onClick={() => router.push(`/${params.storeId}/data-rates/new`)}
+        >
           <Plus className="mr-2 h-4 w-4" /> Add New
         </Button>
       </div>

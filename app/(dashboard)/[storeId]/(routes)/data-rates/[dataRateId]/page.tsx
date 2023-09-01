@@ -2,7 +2,11 @@ import prismadb from '@/lib/prismadb'
 
 import { DataRateForm } from './components/data-rate-form'
 
-const SizePage = async ({ params }: { params: { dataRateId: string } }) => {
+const DataRatePage = async ({ params }: { params: { dataRateId: string } }) => {
+  if (!params.dataRateId) {
+    throw new Error('dataRateId is not provided')
+  }
+
   const dataRate = await prismadb.dataRate.findUnique({
     where: {
       id: params.dataRateId
@@ -18,4 +22,4 @@ const SizePage = async ({ params }: { params: { dataRateId: string } }) => {
   )
 }
 
-export default SizePage
+export default DataRatePage
