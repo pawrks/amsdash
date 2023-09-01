@@ -47,9 +47,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const title = initialData ? 'Edit billboard' : 'Create billboard'
-  const description = initialData ? 'Edit a billboard.' : 'Add a new billboard'
-  const toastMessage = initialData ? 'Billboard updated.' : 'Billboard created.'
+  const title = initialData ? 'Edit contact' : 'Create contact'
+  const description = initialData ? 'Edit a contact' : 'Add a new contact'
+  const toastMessage = initialData ? 'Contact updated.' : 'Contact created.'
   const action = initialData ? 'Save changes' : 'Create'
 
   const form = useForm<ContactFormValues>({
@@ -139,6 +139,57 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
                     <Input
                       disabled={loading}
                       placeholder="Contact name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Title</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Contact title"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Contact phone"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Contact email"
                       {...field}
                     />
                   </FormControl>
