@@ -2,20 +2,20 @@ import prismadb from '@/lib/prismadb'
 
 import { LengthForm } from './components/length-form'
 
-const SizePage = async ({ params }: { params: { sizeId: string } }) => {
-  const size = await prismadb.size.findUnique({
+const LengthPage = async ({ params }: { params: { lengthId: string } }) => {
+  const length = await prismadb.length.findUnique({
     where: {
-      id: params.sizeId
+      id: params.lengthId
     }
   })
 
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <LengthForm initialData={size} />
+        <LengthForm initialData={length} />
       </div>
     </div>
   )
 }
 
-export default SizePage
+export default LengthPage

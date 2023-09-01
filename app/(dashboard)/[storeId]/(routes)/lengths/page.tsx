@@ -5,8 +5,8 @@ import prismadb from '@/lib/prismadb'
 import { LengthColumn } from './components/columns'
 import { LengthClient } from './components/client'
 
-const SizesPage = async ({ params }: { params: { storeId: string } }) => {
-  const sizes = await prismadb.size.findMany({
+const LengthsPage = async ({ params }: { params: { storeId: string } }) => {
+  const lengths = await prismadb.length.findMany({
     where: {
       storeId: params.storeId
     },
@@ -15,7 +15,7 @@ const SizesPage = async ({ params }: { params: { storeId: string } }) => {
     }
   })
 
-  const formattedSizes: LengthColumn[] = sizes.map(item => ({
+  const formattedLengths: LengthColumn[] = lengths.map(item => ({
     id: item.id,
     name: item.name,
     value: item.value,
@@ -25,10 +25,10 @@ const SizesPage = async ({ params }: { params: { storeId: string } }) => {
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <LengthClient data={formattedSizes} />
+        <LengthClient data={formattedLengths} />
       </div>
     </div>
   )
 }
 
-export default SizesPage
+export default LengthsPage

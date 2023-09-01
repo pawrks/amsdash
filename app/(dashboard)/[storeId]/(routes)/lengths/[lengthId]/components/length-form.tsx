@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { Trash } from 'lucide-react'
-import { Size } from '@prisma/client'
+import { Length } from '@prisma/client'
 import { useParams, useRouter } from 'next/navigation'
 
 import { Input } from '@/components/ui/input'
@@ -25,48 +25,52 @@ import { Heading } from '@/components/ui/heading'
 import { AlertModal } from '@/components/modals/alert-modal'
 
 const formSchema = z.object({
-  name: z.string().min(1),
-  value: z.string().min(1)
+  name: z.string().min(1, { message: 'Name is required' }),
+  value: z.string().min(1, { message: 'Value is required' })
 })
 
-type SizeFormValues = z.infer<typeof formSchema>
+type LengthFormValues = z.infer<typeof formSchema>
 
-interface SizeFormProps {
-  initialData: Size | null
+interface LengthFormProps {
+  initialData: Length | null
 }
 
-export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
+export const LengthForm: React.FC<LengthFormProps> = ({ initialData }) => {
   const params = useParams()
   const router = useRouter()
 
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const title = initialData ? 'Edit size' : 'Create size'
-  const description = initialData ? 'Edit a size.' : 'Add a new size'
-  const toastMessage = initialData ? 'Size updated.' : 'Size created.'
+  const title = initialData ? 'Edit length' : 'Create length'
+  const description = initialData ? 'Edit a length.' : 'Add a new length'
+  const toastMessage = initialData ? 'Length updated.' : 'Length created.'
   const action = initialData ? 'Save changes' : 'Create'
 
-  const form = useForm<SizeFormValues>({
+  const form = useForm<LengthFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
-      name: ''
+      name: '',
+      value: ''
     }
   })
 
-  const onSubmit = async (data: SizeFormValues) => {
+  const onSubmit = async (data: LengthFormValues) => {
     try {
       setLoading(true)
       if (initialData) {
-        await axios.patch(`/api/${params.storeId}/sizes/${params.sizeId}`, data)
+        await axios.patch(
+          `/api/${params.storeId}/lengths/${params.lengthId}`,
+          data
+        )
       } else {
-        await axios.post(`/api/${params.storeId}/sizes`, data)
+        await axios.post(`/api/${params.storeId}/lengths`, data)
       }
       router.refresh()
-      router.push(`/${params.storeId}/sizes`)
+      router.push(`/${params.storeId}/lengths`)
       toast.success(toastMessage)
     } catch (error: any) {
-      toast.error('Something went wrong.')
+      toast.error('Something went wrong')
     } finally {
       setLoading(false)
     }
@@ -75,12 +79,12 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
   const onDelete = async () => {
     try {
       setLoading(true)
-      await axios.delete(`/api/${params.storeId}/sizes/${params.sizeId}`)
+      await axios.delete(`/api/${params.storeId}/lengths/${params.lengthId}`)
       router.refresh()
-      router.push(`/${params.storeId}/sizes`)
-      toast.success('Size deleted.')
+      router.push(`/${params.storeId}/lengths`)
+      toast.success('Length deleted.')
     } catch (error: any) {
-      toast.error('Make sure you removed all products using this size first.')
+      toast.error('Make sure you removed all products using this length first.')
     } finally {
       setLoading(false)
       setOpen(false)
@@ -124,7 +128,7 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Size name"
+                      placeholder="Length name"
                       {...field}
                     />
                   </FormControl>
@@ -141,7 +145,7 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Size value"
+                      placeholder="Length value"
                       {...field}
                     />
                   </FormControl>
