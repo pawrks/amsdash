@@ -156,7 +156,7 @@ export function MainNav({
       title: 'Access List',
       description: 'Check-in & check-out facility visitors',
       icon: <ShieldCheck className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/access-list`,
+      href: `/${params.storeId}/contacts`,
       label: 'Access List'
     },
     {
