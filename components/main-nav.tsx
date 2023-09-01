@@ -78,13 +78,27 @@ export function MainNav({
     }
   ]
 
-  const storeRoutes = [
+  const inventoryRoutes = [
     {
       title: 'Overview',
       description: 'Store metrics & recent sales figures',
       icon: <Gauge className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}`,
       label: 'Overview'
+    },
+    {
+      title: 'Settings',
+      description: 'Manage preferences for the store',
+      icon: <Settings className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/settings`,
+      label: 'Settings'
+    },
+    {
+      title: 'Orders',
+      description: 'Orders placed by customers',
+      icon: <Folders className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/orders`,
+      label: 'Orders'
     },
     {
       title: 'Billboards',
@@ -99,6 +113,13 @@ export function MainNav({
       icon: <List className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/categories`,
       label: 'Categories'
+    },
+    {
+      title: 'Products',
+      description: 'Inventory of products available',
+      icon: <ShoppingBag className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/products`,
+      label: 'Products'
     },
     {
       title: 'Sizes',
@@ -127,27 +148,6 @@ export function MainNav({
       icon: <ArrowUpDown className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/data-rates`,
       label: 'Data Rates'
-    },
-    {
-      title: 'Products',
-      description: 'Inventory of products available',
-      icon: <ShoppingBag className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/products`,
-      label: 'Products'
-    },
-    {
-      title: 'Orders',
-      description: 'Orders placed by customers',
-      icon: <Folders className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/orders`,
-      label: 'Orders'
-    },
-    {
-      title: 'Settings',
-      description: 'Manage preferences for the store',
-      icon: <Settings className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/settings`,
-      label: 'Settings'
     }
   ]
 
@@ -254,7 +254,7 @@ export function MainNav({
           <NavigationMenuTrigger>Inventory</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {storeRoutes.map(route => (
+              {inventoryRoutes.map(route => (
                 <ListItem
                   icon={route.icon}
                   key={route.title}

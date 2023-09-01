@@ -20,7 +20,6 @@ model Store {
   lengths         Length[]        @relation("StoreToLength")
   dataRates       DataRate[]      @relation("StoreToDataRate")
   orders          Order[]         @relation("StoreToOrder")
-  accessLists     AccessList[] 
   contacts        Contact[]
   createdAt       DateTime        @default(now())
   updatedAt       DateTime        @updatedAt
@@ -174,32 +173,19 @@ model Image {
   @@index([productId])
 }
 
-model AccessList {
-  id            String            @id @default(uuid())
-  storeId       String
-  store         Store             @relation(fields: [storeId], references: [id])
-  name          String
-  contacts      Contact[]
-  createdAt     DateTime          @default(now())
-  updatedAt     DateTime          @updatedAt
-
-  @@index([storeId])
-}
-
 model Contact {
   id            String            @id @default(uuid())
   storeId       String
   store         Store             @relation(fields: [storeId], references: [id])
-  accessListId  String
-  accessList    AccessList        @relation(fields: [accessListId], references: [id])
   name          String
   phone         String
   email         String
   title         String
-  permissions   String
+  isCustomer    Boolean           @default(false)
+  isPrimary     Boolean           @default(false)
+  isVendor      Boolean           @default(false)
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
 
   @@index([storeId])
-  @@index([accessListId])
 }

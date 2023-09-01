@@ -3,6 +3,8 @@
 import { ColumnDef } from '@tanstack/react-table'
 
 import { CellAction } from './cell-action'
+import { Button } from '@/components/ui/button'
+import { ArrowUpDown } from 'lucide-react'
 
 export type LengthColumn = {
   id: string
@@ -14,15 +16,45 @@ export type LengthColumn = {
 export const columns: ColumnDef<LengthColumn>[] = [
   {
     accessorKey: 'name',
-    header: 'Name'
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
+        </Button>
+      )
+    }
   },
   {
     accessorKey: 'value',
-    header: 'Value'
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Value
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
+        </Button>
+      )
+    }
   },
   {
     accessorKey: 'createdAt',
-    header: 'Date'
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Created
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
+        </Button>
+      )
+    }
   },
   {
     id: 'actions',
