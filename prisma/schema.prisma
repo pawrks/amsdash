@@ -68,10 +68,10 @@ model Product {
   size        Size      @relation(fields: [sizeId], references: [id])
   colorId     String    // Foreign Key to Color
   color       Color     @relation(fields: [colorId], references: [id])
-//  lengthId    String    // Foreign Key to Length
-//  length      Length    @relation(fields: [lengthId], references: [id])
-//  dataRateId  String    // Foreign Key to DataRate
-//  dataRate    DataRate  @relation(fields: [dataRateId], references: [id])
+  lengthId    String    // Foreign Key to Length
+  length      Length    @relation(fields: [lengthId], references: [id])
+  dataRateId  String    // Foreign Key to DataRate
+  dataRate    DataRate  @relation(fields: [dataRateId], references: [id])
   images      Image[]   // Relation to Image model
   orderItems  OrderItem[]   // Relation to Order model
   createdAt   DateTime  @default(now())
@@ -81,8 +81,8 @@ model Product {
   @@index([categoryId])
   @@index([sizeId])
   @@index([colorId])
-//  @@index([lengthId])
-//  @@index([dataRateId])
+  @@index([lengthId])
+  @@index([dataRateId])
 }
 
 model Order {
