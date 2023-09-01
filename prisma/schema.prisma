@@ -81,8 +81,8 @@ model Product {
   @@index([categoryId])
   @@index([sizeId])
   @@index([colorId])
-  @@index([lengthId])
-  @@index([dataRateId])
+//  @@index([lengthId])
+//  @@index([dataRateId])
 }
 
 model Order {
