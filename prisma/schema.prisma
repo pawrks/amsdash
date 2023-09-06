@@ -64,13 +64,13 @@ model Product {
   isFeatured  Boolean   @default(false)
   isArchived  Boolean   @default(false)
   sizeId      String    // Foreign Key to Size
-  size        Size      @relation(fields: [sizeId], references: [id])
+  size        Size?      @relation(fields: [sizeId], references: [id])
   colorId     String    // Foreign Key to Color
-  color       Color     @relation(fields: [colorId], references: [id])
+  color       Color?     @relation(fields: [colorId], references: [id])
   lengthId    String    // Foreign Key to Length
-  length      Length    @relation(fields: [lengthId], references: [id])
+  length      Length?    @relation(fields: [lengthId], references: [id])
   dataRateId  String    // Foreign Key to DataRate
-  dataRate    DataRate  @relation(fields: [dataRateId], references: [id])
+  dataRate    DataRate?  @relation(fields: [dataRateId], references: [id])
   images      Image[]   // Relation to Image model
   orderItems  OrderItem[]   // Relation to Order model
   createdAt   DateTime  @default(now())

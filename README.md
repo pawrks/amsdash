@@ -6,7 +6,6 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 
 - **Next.js, & TypeScript**: Server-side rendering with statically typed language for powerful and efficient development
 - **SQL Database**: MySQL and Prisma
-- **Express**: Node.js server framework to communicate with external APIs
 - **Docker Compose & Ansible**: Container orchestration for streamlined deployment and management
 - **Github Actions**: Automated developer workflows
 
@@ -36,10 +35,9 @@ AMSdash is built to redefine asset management in the physical and virtual data c
 #### Asset Management Dashboard
 
 - Real-time asset & inventory management
-  - Vendor equipment log    
+  - Vendor equipment log
   - Equipment rental checkout
   - Vehicle checkout
-    
 - Data analytics integration for actionable insights
 
 ### Phase 2: Advanced Features

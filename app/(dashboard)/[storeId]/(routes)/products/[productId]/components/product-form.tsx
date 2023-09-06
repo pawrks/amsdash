@@ -47,10 +47,10 @@ const formSchema = z.object({
   images: z.object({ url: z.string() }).array(),
   price: z.coerce.number().min(1),
   categoryId: z.string().min(1),
-  colorId: z.string().min(1),
-  sizeId: z.string().min(1),
-  lengthId: z.string().min(1),
-  dataRateId: z.string().min(1),
+  colorId: z.string().optional(),
+  sizeId: z.string().optional(),
+  lengthId: z.string().optional(),
+  dataRateId: z.string().optional(),
   isFeatured: z.boolean().default(false).optional(),
   isArchived: z.boolean().default(false).optional()
 })
@@ -64,19 +64,19 @@ interface ProductFormProps {
       })
     | null
   categories: Category[]
-  colors: Color[]
-  sizes: Size[]
-  lengths: Length[]
-  dataRates: DataRate[]
+  colors?: Color[]
+  sizes?: Size[]
+  lengths?: Length[]
+  dataRates?: DataRate[]
 }
 
 export const ProductForm: React.FC<ProductFormProps> = ({
   initialData,
   categories,
-  sizes,
-  colors,
-  lengths,
-  dataRates
+  sizes = [],
+  colors = [],
+  lengths = [],
+  dataRates = []
 }) => {
   const params = useParams()
   const router = useRouter()
