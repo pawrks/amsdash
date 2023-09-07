@@ -48,6 +48,20 @@ export const columns: ColumnDef<ContactColumn>[] = [
     }
   },
   {
+    accessorKey: 'isCustomer',
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Customer
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
+        </Button>
+      )
+    }
+  },
+  {
     accessorKey: 'isPrimary',
     header: ({ column }) => {
       return (
@@ -56,6 +70,20 @@ export const columns: ColumnDef<ContactColumn>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           Primary
+          <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
+        </Button>
+      )
+    }
+  },
+  {
+    accessorKey: 'isVendor',
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Vendor
           <ArrowUpDown className="ml-2 h-3.5 w-3.5" />
         </Button>
       )

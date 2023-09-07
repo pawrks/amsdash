@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,6 +24,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { Heading } from '@/components/ui/heading'
 import { AlertModal } from '@/components/modals/alert-modal'
+import { Checkbox } from '@/components/ui/checkbox'
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -194,6 +196,71 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
                     />
                   </FormControl>
                   <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="isCustomer"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      // @ts-ignore
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel>Customer</FormLabel>
+                    <FormDescription>
+                      This contact will be considered a customer with access to
+                      the facility and to submit support requests.
+                    </FormDescription>
+                  </div>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="isPrimary"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      // @ts-ignore
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel>Primary</FormLabel>
+                    <FormDescription>
+                      This contact will be considered a primary contact with for
+                      the customer.
+                    </FormDescription>
+                  </div>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="isVendor"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      // @ts-ignore
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel>Vendor</FormLabel>
+                    <FormDescription>
+                      This contact will be considered a vendor.
+                    </FormDescription>
+                  </div>
                 </FormItem>
               )}
             />

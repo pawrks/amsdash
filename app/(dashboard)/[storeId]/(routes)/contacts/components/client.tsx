@@ -31,7 +31,7 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
         </Button>
       </div>
       <Separator />
-      <DataTable searchKey="label" columns={columns} data={data} />
+      <DataTable searchKey="name" columns={columns} data={data} />
       <Heading title="API" description="Contact endpoints" />
       <Separator />
       <ApiList entityName="contacts" entityIdName="contactId" />
