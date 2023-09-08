@@ -13,9 +13,9 @@ import { BsShieldCheck, BsShieldExclamation, BsTools } from 'react-icons/bs'
 
 export const CheckIn: React.FC = () => {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[450px]">
       <CardHeader>
-        <CardTitle>Check-In</CardTitle>
+        <CardTitle className="text-2xl">Check-In</CardTitle>
         <CardDescription>Check visitors in to the facility</CardDescription>
       </CardHeader>
       <CardContent>
@@ -24,8 +24,13 @@ export const CheckIn: React.FC = () => {
             <div className="flex flex-col space-y-2.5">
               <Label htmlFor="search">Search</Label>
               <Input id="search" placeholder="Company or visitor names" />
+              <Button>Search</Button>
+              <Label htmlFor="company">Company</Label>
+              <Input id="company" placeholder="Company name" />
+              <Label htmlFor="name">Full Name</Label>
+              <Input id="name" placeholder="Visitor name" />
               <Label htmlFor="idNumber">ID Number</Label>
-              <Input id="idNumber" placeholder="ID Number" />
+              <Input id="idNumber" placeholder="Government issued ID number" />
               <RadioGroup
                 defaultValue="card"
                 className="grid grid-cols-3 gap-4"
@@ -38,7 +43,7 @@ export const CheckIn: React.FC = () => {
                   />
                   <Label
                     htmlFor="customer"
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-green-300 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                   >
                     <BsShieldCheck className="mb-3 h-6 w-6" />
                     Customer
@@ -52,7 +57,7 @@ export const CheckIn: React.FC = () => {
                   />
                   <Label
                     htmlFor="visitor"
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-red-300 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                   >
                     <BsShieldExclamation className="mb-3 h-6 w-6" />
                     Visitor
@@ -73,7 +78,7 @@ export const CheckIn: React.FC = () => {
                   </Label>
                 </div>
               </RadioGroup>
-              <Button>Search</Button>
+              <Button>Check-In</Button>
             </div>
           </div>
         </form>
