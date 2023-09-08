@@ -95,20 +95,8 @@ export async function PATCH(
       return new NextResponse('Email is required', { status: 400 })
     }
 
-    if (!isCustomer) {
-      return new NextResponse('Customer is required', { status: 400 })
-    }
-
-    if (!isPrimary) {
-      return new NextResponse('Primary is required', { status: 400 })
-    }
-
-    if (!isVendor) {
-      return new NextResponse('Vendor is required', { status: 400 })
-    }
-
     if (!params.contactId) {
-      return new NextResponse('Billboard id is required', { status: 400 })
+      return new NextResponse('Contact ID is required', { status: 400 })
     }
 
     const storeByUserId = await prismadb.store.findFirst({

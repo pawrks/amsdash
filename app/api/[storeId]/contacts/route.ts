@@ -47,18 +47,6 @@ export async function POST(
       return new NextResponse('Email is required', { status: 400 })
     }
 
-    if (!isCustomer) {
-      return new NextResponse('Customer is required', { status: 400 })
-    }
-
-    if (!isPrimary) {
-      return new NextResponse('Primary is required', { status: 400 })
-    }
-
-    if (!isVendor) {
-      return new NextResponse('Vendor is required', { status: 400 })
-    }
-
     if (!params.storeId) {
       return new NextResponse('Store id is required', { status: 400 })
     }

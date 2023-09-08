@@ -79,7 +79,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
         await axios.post(`/api/${params.storeId}/contacts`, data)
       }
       router.refresh()
-      router.push(`/${params.storeId}/contats`)
+      router.push(`/${params.storeId}/contacts`)
       toast.success(toastMessage)
     } catch (error: any) {
       toast.error('Something went wrong.')
