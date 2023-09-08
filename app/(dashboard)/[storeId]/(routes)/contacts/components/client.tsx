@@ -10,6 +10,7 @@ import { Separator } from '@/components/ui/separator'
 import { ApiList } from '@/components/ui/api-list'
 
 import { columns, ContactColumn } from './columns'
+import { CheckIn } from './check-in'
 
 interface ContactClientProps {
   data: ContactColumn[]
@@ -21,6 +22,12 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
 
   return (
     <>
+      <Heading
+        title="Access List"
+        description="Manage access lists for clients"
+      />
+      <Separator />
+      <CheckIn />
       <div className="flex items-center justify-between">
         <Heading
           title={`Contacts (${data.length})`}
