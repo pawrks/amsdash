@@ -28,6 +28,7 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
       />
       <Separator />
       <CheckIn />
+      <br />
       <div className="flex items-center justify-between">
         <Heading
           title={`Contacts (${data.length})`}
