@@ -11,6 +11,7 @@ import { ApiList } from '@/components/ui/api-list'
 
 import { columns, ContactColumn } from './columns'
 import { CheckIn } from './check-in'
+import DashboardPage from './check-in-results'
 
 interface ContactClientProps {
   data: ContactColumn[]
@@ -27,7 +28,9 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
         description="Manage access lists for clients"
       />
       <Separator />
-      <CheckIn />
+      <div>
+        <CheckIn />
+      </div>
       <br />
       <div className="flex items-center justify-between">
         <Heading

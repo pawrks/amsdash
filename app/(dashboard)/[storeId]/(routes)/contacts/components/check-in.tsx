@@ -43,7 +43,7 @@ export const CheckIn: React.FC = () => {
                   />
                   <Label
                     htmlFor="customer"
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-green-500 dark:hover:bg-green-600 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-green-500 dark:hover:bg-green-600 hover:text-accent-foreground hover:transition-colors peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                   >
                     <BsShieldCheck className="mb-3 h-6 w-6" />
                     Customer
