@@ -43,7 +43,7 @@ export const CheckIn: React.FC = () => {
                   />
                   <Label
                     htmlFor="customer"
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-green-300 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-green-500 dark:hover:bg-green-600 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                   >
                     <BsShieldCheck className="mb-3 h-6 w-6" />
                     Customer
@@ -57,7 +57,7 @@ export const CheckIn: React.FC = () => {
                   />
                   <Label
                     htmlFor="visitor"
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-red-300 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-red-500 dark:hover:bg-red-600 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                   >
                     <BsShieldExclamation className="mb-3 h-6 w-6" />
                     Visitor
@@ -71,7 +71,7 @@ export const CheckIn: React.FC = () => {
                   />
                   <Label
                     htmlFor="vendor"
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:bg-yellow-300 dark:hover:bg-yellow-400 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                   >
                     <BsTools className="mb-3 h-6 w-6" />
                     Vendor
