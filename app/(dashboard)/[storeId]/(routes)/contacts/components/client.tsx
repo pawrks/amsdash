@@ -23,8 +23,7 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
 
   return (
     <>
-    <DashboardPage />
-      <Heading
+   <Heading
         title="Access List"
         description="Manage access lists for clients"
       />
