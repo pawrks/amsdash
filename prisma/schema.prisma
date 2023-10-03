@@ -63,6 +63,7 @@ model Product {
   price       Decimal
   isFeatured  Boolean   @default(false)
   isArchived  Boolean   @default(false)
+  quantity    Int       @default(0)
   sizeId      String    // Foreign Key to Size
   size        Size?      @relation(fields: [sizeId], references: [id])
   colorId     String    // Foreign Key to Color

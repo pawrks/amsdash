@@ -22,7 +22,8 @@ export async function POST(
       dataRateId,
       images,
       isFeatured,
-      isArchived
+      isArchived,
+      quantity
     } = body
 
     if (!userId) {
@@ -54,13 +55,15 @@ export async function POST(
     }
 
     if (!lengthId) {
-      return new NextResponse('Lenght id is required', { status: 400 })
+      return new NextResponse('Length id is required', { status: 400 })
     }
 
     if (!dataRateId) {
       return new NextResponse('Data rate id is required', { status: 400 })
     }
-
+    if (!quantity) {
+      return new NextResponse('Quantity is required', { status: 400 })
+    }
     if (!params.storeId) {
       return new NextResponse('Store id is required', { status: 400 })
     }
@@ -112,6 +115,8 @@ export async function GET(
     const categoryId = searchParams.get('categoryId') || undefined
     const colorId = searchParams.get('colorId') || undefined
     const sizeId = searchParams.get('sizeId') || undefined
+    const dataRateId = searchParams.get('dataRateId') || undefined
+    const lengthId = searchParams.get('lengthId') || undefined
     const isFeatured = searchParams.get('isFeatured')
 
     if (!params.storeId) {
@@ -124,6 +129,8 @@ export async function GET(
         categoryId,
         colorId,
         sizeId,
+        dataRateId,
+        lengthId,
         isFeatured: isFeatured ? true : undefined,
         isArchived: false
       },
@@ -131,7 +138,9 @@ export async function GET(
         images: true,
         category: true,
         color: true,
-        size: true
+        size: true,
+        length: true,
+        dataRate: true
       },
       orderBy: {
         createdAt: 'desc'
