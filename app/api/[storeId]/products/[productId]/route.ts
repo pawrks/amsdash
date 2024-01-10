@@ -20,8 +20,8 @@ export async function GET(
         images: true,
         category: true,
         size: true,
-        color: true
-        // quantity: true
+        color: true,
+        quantity: true
       }
     })
 

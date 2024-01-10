@@ -17,28 +17,20 @@ import {
 import {
   ArrowUpDown,
   BrainCircuit,
-  Building,
-  Contact,
   Cpu,
   Droplets,
   FolderClock,
-  Folders,
   Gauge,
   Landmark,
-  LayoutDashboard,
-  List,
   MemoryStick,
   Microscope,
   Package,
-  Palette,
   Plug,
   Receipt,
-  Ruler,
   Scaling,
   ScrollText,
   Settings,
   Share2,
-  ShieldCheck,
   ShoppingBag,
   Stethoscope,
   Ticket
@@ -59,32 +51,25 @@ export function MainNav({
     //   label: 'Facilities'
     // },
     {
-      title: 'Overview',
-      description: 'Network metrics overview',
-      icon: <Gauge className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}`,
-      label: 'Overview'
-    },
-    {
       title: 'Virtual Networks',
       description: 'Subnet data center resources',
       icon: <Share2 className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/assets/network`,
-      label: 'Network'
+      label: 'Virtual Networks'
     },
     {
       title: 'VPN',
       description: 'Virtual private network options',
       icon: <Plug className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/assets/power`,
-      label: 'Power'
+      label: 'VPN'
     },
     {
       title: 'Monitoring',
       description: 'Real-time infrastructure health monitoring ',
       icon: <Stethoscope className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/vendor-management`,
-      label: 'Vendor Management'
+      label: 'Monitoring'
     }
     // {
     //   title: 'Vendor Management',
@@ -96,13 +81,6 @@ export function MainNav({
   ]
 
   const inventoryRoutes = [
-    {
-      title: 'Overview',
-      description: 'VM metrics overview',
-      icon: <Gauge className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}`,
-      label: 'Overview'
-    },
     // {
     //   title: 'Settings',
     //   description: 'Manage preferences for the store',
@@ -136,14 +114,14 @@ export function MainNav({
       description: 'Inventory of VMs',
       icon: <ShoppingBag className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/products`,
-      label: 'Products'
+      label: 'VMs'
     },
     {
       title: 'Storage',
       description: 'Storage options for VMs',
       icon: <Scaling className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/sizes`,
-      label: 'Sizes'
+      label: 'Storage'
     },
     {
       title: 'CPU',
@@ -170,13 +148,6 @@ export function MainNav({
 
   const supportRoutes = [
     {
-      title: 'Overview',
-      description: 'Storage metrics overview',
-      icon: <Gauge className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}`,
-      label: 'Overview'
-    },
-    {
       title: 'Pools',
       description: 'Storage pools for data center resources',
       icon: <Droplets className="mr-2 h-4 w-4" />,
@@ -188,21 +159,21 @@ export function MainNav({
       description: 'Backups for VMs',
       icon: <Package className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/package-tracking`,
-      label: 'Package Tracking'
+      label: 'Backups'
     },
     {
       title: 'Replication',
       description: 'Live replication for VMs',
       icon: <Ticket className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/tickets`,
-      label: 'Tickets'
+      label: 'Replication'
     },
     {
       title: 'Monitoring',
       description: 'Real-time storage infrastructure health monitoring',
       icon: <Stethoscope className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/vendor-management`,
-      label: 'Vendor Management'
+      label: 'Monitoring'
     }
   ]
 
@@ -239,6 +210,20 @@ export function MainNav({
 
   const accountRoutes = [
     {
+      title: 'Overview',
+      description: 'Data center metrics overview',
+      icon: <Gauge className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}`,
+      label: 'Overview'
+    },
+    {
+      title: 'Settings',
+      description: 'Manage account settings',
+      icon: <Settings className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/settings`,
+      label: 'Settings'
+    },
+    {
       title: 'Sales',
       description: 'Sales and revenue figures',
       icon: <Landmark className="mr-2 h-4 w-4" />,
@@ -257,6 +242,23 @@ export function MainNav({
   return (
     <NavigationMenu className="ml-4">
       <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Account</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              {accountRoutes.map(route => (
+                <ListItem
+                  icon={route.icon}
+                  key={route.href}
+                  title={route.title}
+                  href={route.href}
+                >
+                  {route.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Compute</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -313,23 +315,6 @@ export function MainNav({
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {insightRoutes.map(route => (
-                <ListItem
-                  icon={route.icon}
-                  key={route.href}
-                  title={route.title}
-                  href={route.href}
-                >
-                  {route.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Accounts</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              {accountRoutes.map(route => (
                 <ListItem
                   icon={route.icon}
                   key={route.href}
