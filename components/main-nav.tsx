@@ -19,12 +19,15 @@ import {
   BrainCircuit,
   Building,
   Contact,
+  Cpu,
+  Droplets,
   FolderClock,
   Folders,
   Gauge,
   Landmark,
   LayoutDashboard,
   List,
+  MemoryStick,
   Microscope,
   Package,
   Palette,
@@ -48,103 +51,117 @@ export function MainNav({
   const params = useParams()
 
   const assetRoutes = [
-    {
-      title: 'Facilities',
-      description: 'Data center phases & floor plans',
-      icon: <Building className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/facilities`,
-      label: 'Facilities'
-    },
-    {
-      title: 'Network',
-      description: 'IP blocks & cross-connects',
-      icon: <Share2 className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/network`,
-      label: 'Network'
-    },
-    {
-      title: 'Power',
-      description: 'Power audit | Service vs usage',
-      icon: <Plug className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/assets/power`,
-      label: 'Power'
-    },
-    {
-      title: 'Vendor Management',
-      description: 'Vendor contacts & on-site visits',
-      icon: <Contact className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/support/vendor-management`,
-      label: 'Vendor Management'
-    }
-  ]
-
-  const inventoryRoutes = [
+    // {
+    //   title: 'Facilities',
+    //   description: 'Data center phases & floor plans',
+    //   icon: <Building className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/assets/facilities`,
+    //   label: 'Facilities'
+    // },
     {
       title: 'Overview',
-      description: 'Store metrics & recent sales figures',
+      description: 'Network metrics overview',
       icon: <Gauge className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}`,
       label: 'Overview'
     },
     {
-      title: 'Settings',
-      description: 'Manage preferences for the store',
-      icon: <Settings className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/settings`,
-      label: 'Settings'
+      title: 'Virtual Networks',
+      description: 'Subnet data center resources',
+      icon: <Share2 className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/assets/network`,
+      label: 'Network'
     },
     {
-      title: 'Orders',
-      description: 'Orders placed by customers',
-      icon: <Folders className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/orders`,
-      label: 'Orders'
+      title: 'VPN',
+      description: 'Virtual private network options',
+      icon: <Plug className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/assets/power`,
+      label: 'Power'
     },
     {
-      title: 'Billboards',
-      description: 'Images for store website',
-      icon: <LayoutDashboard className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/billboards`,
-      label: 'Billboards'
-    },
+      title: 'Monitoring',
+      description: 'Real-time infrastructure health monitoring ',
+      icon: <Stethoscope className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/support/vendor-management`,
+      label: 'Vendor Management'
+    }
+    // {
+    //   title: 'Vendor Management',
+    //   description: 'Vendor contacts & on-site visits',
+    //   icon: <Contact className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/support/vendor-management`,
+    //   label: 'Vendor Management'
+    // }
+  ]
+
+  const inventoryRoutes = [
     {
-      title: 'Categories',
-      description: 'Organize products into categories',
-      icon: <List className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/categories`,
-      label: 'Categories'
+      title: 'Overview',
+      description: 'VM metrics overview',
+      icon: <Gauge className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}`,
+      label: 'Overview'
     },
+    // {
+    //   title: 'Settings',
+    //   description: 'Manage preferences for the store',
+    //   icon: <Settings className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/settings`,
+    //   label: 'Settings'
+    // },
+    // {
+    //   title: 'Orders',
+    //   description: 'Recent orders placed',
+    //   icon: <Folders className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/orders`,
+    //   label: 'Orders'
+    // },
+    // {
+    //   title: 'Images',
+    //   description: 'Operating system images',
+    //   icon: <LayoutDashboard className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/billboards`,
+    //   label: 'Billboards'
+    // },
+    // {
+    //   title: 'Categories',
+    //   description: 'Organize products into categories',
+    //   icon: <List className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/categories`,
+    //   label: 'Categories'
+    // },
     {
-      title: 'Products',
-      description: 'Inventory of products available',
+      title: 'VMs',
+      description: 'Inventory of VMs',
       icon: <ShoppingBag className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/products`,
       label: 'Products'
     },
     {
-      title: 'Sizes',
-      description: 'Size options for products',
+      title: 'Storage',
+      description: 'Storage options for VMs',
       icon: <Scaling className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/sizes`,
       label: 'Sizes'
     },
     {
-      title: 'Colors',
-      description: 'Color options for products',
-      icon: <Palette className="mr-2 h-4 w-4" />,
+      title: 'CPU',
+      description: 'CPU options for VMs',
+      icon: <Cpu className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/colors`,
-      label: 'Colors'
+      label: 'CPU'
     },
     {
-      title: 'Lengths',
-      description: 'Length options for products',
-      icon: <Ruler className="mr-2 h-4 w-4" />,
+      title: 'Memory',
+      description: 'Memory options for VMs',
+      icon: <MemoryStick className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/lengths`,
-      label: 'Lengths'
+      label: 'Memory'
     },
     {
       title: 'Data Rates',
-      description: 'Data rate options for products',
+      description: 'Data rate options for VMs',
       icon: <ArrowUpDown className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/data-rates`,
       label: 'Data Rates'
@@ -153,29 +170,36 @@ export function MainNav({
 
   const supportRoutes = [
     {
-      title: 'Access List',
-      description: 'Check-in & check-out facility visitors',
-      icon: <ShieldCheck className="mr-2 h-4 w-4" />,
+      title: 'Overview',
+      description: 'Storage metrics overview',
+      icon: <Gauge className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}`,
+      label: 'Overview'
+    },
+    {
+      title: 'Pools',
+      description: 'Storage pools for data center resources',
+      icon: <Droplets className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/contacts`,
       label: 'Access List'
     },
     {
-      title: 'Package Tracking',
-      description: 'Track incoming & outgoing packages',
+      title: 'Backups',
+      description: 'Backups for VMs',
       icon: <Package className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/package-tracking`,
       label: 'Package Tracking'
     },
     {
-      title: 'Tickets',
-      description: 'Ticket portal for support requests',
+      title: 'Replication',
+      description: 'Live replication for VMs',
       icon: <Ticket className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/tickets`,
       label: 'Tickets'
     },
     {
       title: 'Monitoring',
-      description: 'Real-time infrastructure health monitoring ',
+      description: 'Real-time storage infrastructure health monitoring',
       icon: <Stethoscope className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/vendor-management`,
       label: 'Vendor Management'
@@ -234,24 +258,7 @@ export function MainNav({
     <NavigationMenu className="ml-4">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              {assetRoutes.map(route => (
-                <ListItem
-                  icon={route.icon}
-                  key={route.title}
-                  title={route.title}
-                  href={route.href}
-                >
-                  {route.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Inventory</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Compute</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {inventoryRoutes.map(route => (
@@ -268,7 +275,24 @@ export function MainNav({
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Support</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Network</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              {assetRoutes.map(route => (
+                <ListItem
+                  icon={route.icon}
+                  key={route.title}
+                  title={route.title}
+                  href={route.href}
+                >
+                  {route.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Storage</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {supportRoutes.map(route => (

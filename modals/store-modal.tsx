@@ -53,8 +53,8 @@ export const StoreModal = () => {
 
   return (
     <Modal
-      title="Create Client"
-      description="Add a new client"
+      title="Create Data Center"
+      description="Add a new data center"
       isOpen={storeModal.isOpen}
       onClose={storeModal.onClose}
     >
@@ -72,7 +72,7 @@ export const StoreModal = () => {
                       <FormControl>
                         <Input
                           disabled={loading}
-                          placeholder="E-Commerce"
+                          placeholder="Data center name"
                           {...field}
                         />
                       </FormControl>
