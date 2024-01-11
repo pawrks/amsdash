@@ -9,6 +9,9 @@ import { getSalesCount } from '@/actions/get-sales-count'
 import { getGraphRevenue } from '@/actions/get-graph-revenue'
 import { getStockCount } from '@/actions/get-stock-count'
 import { formatter } from '@/lib/utils'
+import { EnvironmentSetup } from '@/components/environment-card'
+import { VMSetup } from '@/components/vm-card'
+import { VMSummary } from '@/components/vm-summary'
 
 interface DashboardPageProps {
   params: {
@@ -26,14 +29,55 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({ params }) => {
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
         <Heading
-          title="Dashboard"
-          description="Overview of data center inventory"
+          title="CloudKey Platform Cost Planner"
+          description="Potential cost of data center resources"
+        />
+        <Separator />
+        <div className="grid gap-4 grid-cols-3">
+          <EnvironmentSetup />
+          <VMSetup />
+          <VMSummary />
+        </div>
+        <Heading
+          title="Cost Overview"
+          description="Monthy and yearly cost planning"
         />
         <Separator />
         <div className="grid gap-4 grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Cost</CardTitle>
+              <CardTitle className="text-sm font-medium">Compute</CardTitle>
+              <CreditCard className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{salesCount}</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Network</CardTitle>
+              <Package className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{stockCount}</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Storage</CardTitle>
+              <Package className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{stockCount}</div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="grid gap-4 grid-cols-2">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Monthly Cost
+              </CardTitle>
               <DollarSign className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -44,33 +88,26 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({ params }) => {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Resources</CardTitle>
-              <CreditCard className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium">Yearly Cost</CardTitle>
+              <DollarSign className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{salesCount}</div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Resourcses In Use
-              </CardTitle>
-              <Package className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stockCount}</div>
+              <div className="text-2xl font-bold">
+                {formatter.format(totalRevenue)}
+              </div>
             </CardContent>
           </Card>
         </div>
-        <Card className="col-span-4">
-          <CardHeader>
-            <CardTitle>Overview</CardTitle>
-          </CardHeader>
-          <CardContent className="pl-2">
-            <Overview data={graphRevenue} />
-          </CardContent>
-        </Card>
+        <div>
+          <Card className="col-span-4">
+            <CardHeader>
+              <CardTitle>Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-2">
+              <Overview data={graphRevenue} />
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   )

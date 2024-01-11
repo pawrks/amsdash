@@ -23,7 +23,7 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
 
   return (
     <>
-   <Heading
+      <Heading
         title="Access List"
         description="Manage access lists for clients"
       />
@@ -43,9 +43,6 @@ export const ContactClient: React.FC<ContactClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="Contact endpoints" />
-      <Separator />
-      <ApiList entityName="contacts" entityIdName="contactId" />
     </>
   )
 }

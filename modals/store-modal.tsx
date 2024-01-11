@@ -54,7 +54,7 @@ export const StoreModal = () => {
   return (
     <Modal
       title="Create Data Center"
-      description="Add a new data center"
+      description="Add a new data center to manage"
       isOpen={storeModal.isOpen}
       onClose={storeModal.onClose}
     >

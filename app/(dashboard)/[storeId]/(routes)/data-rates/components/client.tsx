@@ -34,9 +34,6 @@ export const DataRateClient: React.FC<DataRateClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="Data rate endpoints" />
-      <Separator />
-      <ApiList entityName="dataRates" entityIdName="dataRateId" />
     </>
   )
 }

@@ -29,9 +29,6 @@ export const ProductsClient: React.FC<ProductsClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="Product endpoints" />
-      <Separator />
-      <ApiList entityName="products" entityIdName="productId" />
     </>
   )
 }

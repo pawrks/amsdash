@@ -111,39 +111,60 @@ export function MainNav({
     // },
     {
       title: 'VMs',
-      description: 'Inventory of VMs',
+      description: 'Provision & manage virtual machines',
       icon: <ShoppingBag className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/products`,
       label: 'VMs'
     },
     {
-      title: 'Storage',
-      description: 'Storage options for VMs',
-      icon: <Scaling className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/sizes`,
-      label: 'Storage'
+      title: 'Virtual Apps',
+      description: 'Install & configure applications',
+      icon: <ShoppingBag className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/products`,
+      label: 'Containers'
     },
     {
-      title: 'CPU',
-      description: 'CPU options for VMs',
-      icon: <Cpu className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/colors`,
-      label: 'CPU'
+      title: 'Virtual Desktops',
+      description: 'Thin client virtual desktops',
+      icon: <ShoppingBag className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/products`,
+      label: 'Containers'
     },
     {
-      title: 'Memory',
-      description: 'Memory options for VMs',
-      icon: <MemoryStick className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/lengths`,
-      label: 'Memory'
-    },
-    {
-      title: 'Data Rates',
-      description: 'Data rate options for VMs',
-      icon: <ArrowUpDown className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/data-rates`,
-      label: 'Data Rates'
+      title: 'ISO Images',
+      description: 'Images for VMs',
+      icon: <ShoppingBag className="mr-2 h-4 w-4" />,
+      href: `/${params.storeId}/products`,
+      label: 'Containers'
     }
+    // {
+    //   title: 'Storage',
+    //   description: 'Storage options for VMs',
+    //   icon: <Scaling className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/sizes`,
+    //   label: 'Storage'
+    // },
+    // {
+    //   title: 'CPU',
+    //   description: 'CPU options for VMs',
+    //   icon: <Cpu className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/colors`,
+    //   label: 'CPU'
+    // },
+    // {
+    //   title: 'Memory',
+    //   description: 'Memory options for VMs',
+    //   icon: <MemoryStick className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/lengths`,
+    //   label: 'Memory'
+    // },
+    // {
+    //   title: 'Data Rates',
+    //   description: 'Data rate options for VMs',
+    //   icon: <ArrowUpDown className="mr-2 h-4 w-4" />,
+    //   href: `/${params.storeId}/data-rates`,
+    //   label: 'Data Rates'
+    // }
   ]
 
   const supportRoutes = [
@@ -167,13 +188,6 @@ export function MainNav({
       icon: <Ticket className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}/support/tickets`,
       label: 'Replication'
-    },
-    {
-      title: 'Monitoring',
-      description: 'Real-time storage infrastructure health monitoring',
-      icon: <Stethoscope className="mr-2 h-4 w-4" />,
-      href: `/${params.storeId}/support/vendor-management`,
-      label: 'Monitoring'
     }
   ]
 
@@ -210,8 +224,8 @@ export function MainNav({
 
   const accountRoutes = [
     {
-      title: 'Overview',
-      description: 'Data center metrics overview',
+      title: 'Cost Planner',
+      description: 'View potential data center costs',
       icon: <Gauge className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}`,
       label: 'Overview'

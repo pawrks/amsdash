@@ -32,9 +32,6 @@ export const LengthClient: React.FC<LengthClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="Length endpoints" />
-      <Separator />
-      <ApiList entityName="lengths" entityIdName="lengthId" />
     </>
   )
 }
