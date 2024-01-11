@@ -26,7 +26,7 @@ export const VMSetup = () => {
             <Label htmlFor="framework">Name</Label>
             <Input max={100} placeholder="VM Name" />
           </div>
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-2">
             <Label htmlFor="framework">CPU Cores</Label>
             <Slider max={100} className="pb-4" />
             <Label htmlFor="framework">Memory</Label>

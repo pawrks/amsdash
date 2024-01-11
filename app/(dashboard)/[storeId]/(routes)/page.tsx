@@ -29,7 +29,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({ params }) => {
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
         <Heading
-          title="CloudKey Platform Cost Planner"
+          title="CloudKey Builder"
           description="Potential cost of data center resources"
         />
         <Separator />

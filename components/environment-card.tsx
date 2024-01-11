@@ -17,6 +17,7 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
+import { Checkbox } from '@/components/ui/checkbox'
 
 export const EnvironmentSetup = () => {
   return (
@@ -28,6 +29,32 @@ export const EnvironmentSetup = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
+        <div className="flex-col items-center ml-2 my-2 space-x-2">
+          <p className="text-lg">Included with your environment!</p>
+          <label
+            htmlFor="firewall-vpn"
+            className="text-s  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Firewall & VPN
+          </label>
+          <Checkbox checked disabled id="firewall-vpn" />
+          <br></br>
+          <label
+            htmlFor="ddos"
+            className="text-sm font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            CloudFlare DDOS Protection
+          </label>
+          <Checkbox checked disabled id="ddos" />
+          <br></br>
+          <label
+            htmlFor="monitoring"
+            className="text-sm font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Health & Uptime Monitoring
+          </label>
+          <Checkbox checked disabled id="monitoring" />
+        </div>
         <form>
           <div className="flex flex-col py-4 space-y-1.5">
             <Label htmlFor="name">Name</Label>
