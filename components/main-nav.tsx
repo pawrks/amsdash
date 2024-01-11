@@ -224,7 +224,7 @@ export function MainNav({
 
   const accountRoutes = [
     {
-      title: 'CloudKey Cost Planner',
+      title: 'CloudKey Calculator',
       description: 'View potential data center costs',
       icon: <Gauge className="mr-2 h-4 w-4" />,
       href: `/${params.storeId}`,

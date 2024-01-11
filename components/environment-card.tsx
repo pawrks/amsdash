@@ -29,19 +29,35 @@ export const EnvironmentSetup = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex-col items-center ml-2 my-2 space-x-2">
-          <p className="text-lg">Included with your environment!</p>
+        <div className="flex-col items-center ml-2 space-x-2 space-y-3">
+          <p className="text-lg">Included with your environment</p>
           <label
-            htmlFor="firewall-vpn"
-            className="text-s  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            htmlFor="firewall"
+            className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            Firewall & VPN
+            No additional cost!
           </label>
-          <Checkbox checked disabled id="firewall-vpn" />
+          <Checkbox hidden checked disabled id="firewall" />
+          <br></br>
+          <label
+            htmlFor="firewall"
+            className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Firewall
+          </label>
+          <Checkbox checked disabled id="firewall" />
+          <br></br>
+          <label
+            htmlFor="vpn"
+            className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            VPN
+          </label>
+          <Checkbox checked disabled id="vpn" />
           <br></br>
           <label
             htmlFor="ddos"
-            className="text-sm font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             CloudFlare DDOS Protection
           </label>
@@ -49,7 +65,7 @@ export const EnvironmentSetup = () => {
           <br></br>
           <label
             htmlFor="monitoring"
-            className="text-sm font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             Health & Uptime Monitoring
           </label>
