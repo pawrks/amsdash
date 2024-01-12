@@ -81,4 +81,4 @@ AMSdash is built to redefine asset management in the physical and virtual data c
   - 3D visualization and AR support
   - Interactive asset management interface
 
-This demo project has been moved put on hold.
+This demo project has been put on hold.
